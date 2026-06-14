@@ -32,7 +32,7 @@ export function About() {
                 className="mx-auto h-auto w-full max-w-sm object-contain"
               />
               <p className="mt-8 text-center text-sm tracking-[0.3em] text-bronze-light uppercase">
-                Puerto Rico · Since 2011
+                Puerto Rico · Est. 2011
               </p>
             </div>
           </div>

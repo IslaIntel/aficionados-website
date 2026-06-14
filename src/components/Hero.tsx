@@ -11,12 +11,16 @@ export function Hero() {
   const reduceMotion = useReducedMotion();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
+  const opacity = useTransform(scrollYProgress, [0, 0.75], [1, 0.35]);
 
   return (
-    <section ref={ref} className="relative min-h-screen overflow-hidden bg-charcoal text-white">
-      <motion.div className="absolute inset-0" style={reduceMotion ? undefined : { y }}>
+    <section ref={ref} className="relative h-full overflow-hidden bg-charcoal text-white">
+      <motion.div
+        className="absolute inset-0"
+        style={reduceMotion ? undefined : { y, scale }}
+      >
         <video
           autoPlay
           muted
@@ -29,7 +33,7 @@ export function Hero() {
         </video>
       </motion.div>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-charcoal/75 via-charcoal/55 to-charcoal/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/50 to-charcoal/70" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(197,160,115,0.22),transparent_45%)]" />
       <MotionOverlay variant="hero" />
 
@@ -41,7 +45,7 @@ export function Hero() {
       />
 
       <motion.div
-        className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pt-32 pb-24 lg:px-10"
+        className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-6 pt-32 pb-24 lg:px-10"
         style={reduceMotion ? undefined : { opacity }}
       >
         <motion.p
@@ -109,8 +113,6 @@ export function Hero() {
           <span className="h-10 w-px bg-gradient-to-b from-bronze-light to-transparent" />
         </motion.div>
       </motion.div>
-
-      <div className="absolute right-0 bottom-0 left-0 h-40 bg-gradient-to-t from-ivory via-ivory/80 to-transparent" />
     </section>
   );
 }

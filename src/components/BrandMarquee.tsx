@@ -11,18 +11,18 @@ export function BrandMarquee() {
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-charcoal to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-charcoal to-transparent" />
 
-      <div className="marquee-track flex w-max items-center gap-16 px-8">
+      <div className="marquee-track flex w-max items-center gap-10 px-8">
         {items.map((brand, index) => (
           <div
             key={`${brand.name}-${index}`}
-            className="flex h-16 w-40 shrink-0 items-center justify-center opacity-60 grayscale transition hover:opacity-100 hover:grayscale-0"
+            className="flex h-20 w-36 shrink-0 items-center justify-center rounded-sm border border-white/8 bg-[linear-gradient(145deg,#2f2b28,#1a1714)] px-4 opacity-80 transition hover:opacity-100"
           >
             <Image
               src={brand.image}
               alt={brand.name}
-              width={140}
-              height={60}
-              className="h-auto max-h-12 w-auto max-w-[140px] object-contain brightness-200"
+              width={120}
+              height={52}
+              className="h-auto max-h-10 w-auto max-w-[120px] object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]"
             />
           </div>
         ))}

@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 import type { PortfolioCategory } from "@/lib/design-tokens";
 import { portfolioBrands } from "@/lib/portfolio";
+import { BrandLogoPlate } from "./BrandLogoPlate";
+import { MotionOverlay } from "./MotionOverlay";
 import { SectionReveal } from "./SectionReveal";
 
 const filters: PortfolioCategory[] = ["all", "wine", "spirits", "beer", "liqueurs"];
@@ -20,6 +21,7 @@ export function Portfolio() {
 
   return (
     <section id="portfolio" className="relative overflow-hidden bg-cream px-6 py-24 lg:px-10 lg:py-32">
+      <MotionOverlay variant="section" />
       <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle_at_1px_1px,#231f20_1px,transparent_0)] [background-size:28px_28px]" />
       <div className="shimmer-line pointer-events-none absolute top-0 left-0 h-px w-full opacity-50" />
 
@@ -53,15 +55,16 @@ export function Portfolio() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filtered.map((brand, index) => (
             <SectionReveal key={brand.name} delay={(index % 8) * 0.04}>
-              <article className="group relative flex min-h-44 items-center justify-center overflow-hidden border border-charcoal/8 bg-ivory p-8 transition duration-500 hover:-translate-y-1 hover:border-bronze/35 hover:shadow-[0_24px_60px_-30px_rgba(35,31,32,0.45)]">
-                <div className="absolute inset-0 bg-gradient-to-br from-bronze/0 via-transparent to-bronze/8 opacity-0 transition group-hover:opacity-100" />
-                <Image
+              <article className="group relative overflow-hidden border border-charcoal/12 bg-charcoal p-5 transition duration-500 hover:-translate-y-1 hover:border-bronze/40 hover:shadow-[0_24px_60px_-30px_rgba(35,31,32,0.55)]">
+                <div className="absolute inset-0 bg-gradient-to-br from-bronze/0 via-transparent to-bronze/10 opacity-0 transition group-hover:opacity-100" />
+                <BrandLogoPlate
                   src={brand.image}
                   alt={brand.name}
-                  width={220}
-                  height={120}
-                  className="relative z-10 h-auto max-h-24 w-full object-contain transition duration-500 group-hover:scale-[1.03]"
+                  className="relative z-10 border-charcoal/40"
                 />
+                <p className="relative z-10 mt-4 text-center text-[0.62rem] tracking-[0.18em] text-white/55 uppercase transition group-hover:text-bronze-light">
+                  {brand.name}
+                </p>
               </article>
             </SectionReveal>
           ))}

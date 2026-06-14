@@ -8,7 +8,7 @@ type MotionOverlayProps = {
 
 export function MotionOverlay({ variant = "section" }: MotionOverlayProps) {
   const reduceMotion = useReducedMotion();
-  const count = variant === "hero" ? 18 : 8;
+  const count = variant === "hero" ? 22 : 10;
 
   if (reduceMotion) return null;
 
@@ -50,6 +50,14 @@ export function MotionOverlay({ variant = "section" }: MotionOverlayProps) {
         animate={{ rotate: -360 }}
         transition={{ duration: 55, repeat: Infinity, ease: "linear" }}
       />
+
+      {variant === "hero" && (
+        <motion.div
+          className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-bronze-light/50 to-transparent"
+          animate={{ y: ["0vh", "100vh"] }}
+          transition={{ duration: 9, repeat: Infinity, ease: "linear" }}
+        />
+      )}
 
       <div className="absolute inset-0 opacity-[0.04] [background-image:linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] [background-size:64px_64px]" />
     </div>

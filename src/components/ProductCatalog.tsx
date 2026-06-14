@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 import type { PortfolioCategory } from "@/lib/design-tokens";
 import { getProductStats, products, type Product } from "@/lib/products";
+import { BrandLogoPlate } from "./BrandLogoPlate";
 import { MotionOverlay } from "./MotionOverlay";
 import { SectionReveal } from "./SectionReveal";
 
@@ -220,14 +220,8 @@ function ProductCard({
         <AvailabilityBadge availability={product.availability} label={t(`availability.${product.availability}`)} />
       </div>
 
-      <div className="mb-5 flex h-24 items-center justify-center bg-ivory/95 p-4">
-        <Image
-          src={product.image}
-          alt={product.name}
-          width={180}
-          height={80}
-          className="max-h-16 w-auto object-contain transition duration-500 group-hover:scale-105"
-        />
+      <div className="mb-5">
+        <BrandLogoPlate src={product.image} alt={product.name} />
       </div>
 
       <h3 className="font-display mb-1 text-xl text-white">{product.name}</h3>
@@ -300,8 +294,8 @@ function ProductDetailModal({
         <p className="mb-2 font-mono text-xs text-bronze-light">{product.sku}</p>
         <h3 className="font-display mb-6 text-3xl text-white">{product.name}</h3>
 
-        <div className="mb-6 flex h-32 items-center justify-center bg-ivory p-6">
-          <Image src={product.image} alt={product.name} width={240} height={100} className="max-h-24 object-contain" />
+        <div className="mb-6">
+          <BrandLogoPlate src={product.image} alt={product.name} height="lg" />
         </div>
 
         <dl className="grid gap-4 sm:grid-cols-2">
