@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "title": "Aficionados INC | Wine & Spirits",
+    "description": "Boutique importer and distributor of exclusive wines, spirits, and craft beer in Puerto Rico since 2011."
+  },
+  "nav": {
+    "about": "About",
+    "portfolio": "Portfolio",
+    "values": "Who we are",
+    "tasting": "Tasting Room",
+    "contact": "Contact",
+    "localeSwitch": "ES"
+  },
+  "hero": {
+    "eyebrow": "Welcome!",
+    "title": "We are Aficionados!",
+    "subtitle": "Boutique importers of exclusive brands in Puerto Rico",
+    "cta": "Explore portfolio",
+    "ctaSecondary": "Visit tasting room"
+  },
+  "stats": {
+    "founded": "Founded",
+    "foundedValue": "2011",
+    "labels": "Exclusive labels",
+    "labelsValue": "400+",
+    "market": "Market",
+    "marketValue": "Puerto Rico"
+  },
+  "about": {
+    "eyebrow": "Our story",
+    "title": "Aficionados Wine & Spirits",
+    "paragraph1": "Formed in 2011, Aficionados is a boutique importer and distributor of specialty wines, spirits and beer brands serving the Puerto Rico market. We strive to collect unique finds, drive enthusiasm and passion, while offering a differentiated value in an already crowded marketplace.",
+    "paragraph2": "Currently, we exclusively sell and distribute over 400 different labels from wineries, distilleries and breweries. Our brand portfolio ranges from wines from Argentina, certified organic and vegan, limited productions from renowned regions such as Napa and Burgundy, world renowned Italian producers, small batch distillations, eclectic liqueurs and specialized craft beer projects."
+  },
+  "portfolio": {
+    "eyebrow": "Our Brands",
+    "title": "Portfolio",
+    "description": "A curated selection of wineries, distilleries, and breweries we represent exclusively in Puerto Rico.",
+    "filters": {
+      "all": "All",
+      "wine": "Wine",
+      "spirits": "Spirits",
+      "beer": "Beer",
+      "liqueurs": "Liqueurs"
+    }
+  },
+  "values": {
+    "eyebrow": "Who we are",
+    "title": "Our philosophy",
+    "mission": {
+      "title": "Mission",
+      "body": "Devoted to surprise and delight customers with the unique wines, spirits and beers we passionately and exclusively import, sell and distribute, while providing an all-encompassing brand management solution to our providers and partners in business."
+    },
+    "vision": {
+      "title": "Vision",
+      "body": "To provide unique and memorable brand experiences. Through our portfolio and their stories we will help create and expand knowledge, thus providing a platform for new discoveries and enjoyment."
+    },
+    "principles": {
+      "title": "Values",
+      "body": "Passion: vivid fans of what we do and of the brands we represent. Devotion: committed to engage consumers in new and better experiences. Integrity: real, honest, open, ethical, fair and always, always do the right thing."
+    }
+  },
+  "tasting": {
+    "eyebrow": "Experience",
+    "title": "Experience our Tasting Room!",
+    "body": "Located in #39 Frances St. Amelia Ind. Park in Guaynabo and open from Monday to Friday from 9:00 AM to 6:00 PM, our tasting room is available for private events or simply to try something new with good friends and company. Our knowledgeable and attentive staff is at your disposal — at Aficionados Wine & Spirits we aspire to accompany you on that memory-making journey.",
+    "cta": "Contact Us"
+  },
+  "contact": {
+    "eyebrow": "Contact Us",
+    "title": "Let's talk",
+    "description": "We are at your service for trade inquiries, private events, and new discoveries.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Thank you. Your message is ready to send."
+    },
+    "findUs": "Where to find us",
+    "hours": "Hours of operation",
+    "hoursValue": "Monday to Friday: 9:00 AM - 6:00 PM",
+    "address": "39 Calle Frances, Guaynabo, 00934, Puerto Rico",
+    "phone": "787-273-0403",
+    "emailInfo": "info@aficionadosinc.com",
+    "emailSales": "sales@aficionadosinc.com"
+  },
+  "footer": {
+    "tagline": "Boutique importers and distributors since 2011",
+    "rights": "© 2024 Aficionados Wine & Spirits. All rights reserved."
+  }
+}

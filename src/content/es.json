@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "title": "Aficionados INC | Wine & Spirits",
+    "description": "Importador y distribuidor boutique de vinos, espíritus y cervezas artesanales en Puerto Rico desde 2011."
+  },
+  "nav": {
+    "about": "Nosotros",
+    "portfolio": "Portafolio",
+    "values": "Quiénes somos",
+    "tasting": "Degustación",
+    "contact": "Contacto",
+    "localeSwitch": "EN"
+  },
+  "hero": {
+    "eyebrow": "¡Bienvenidos!",
+    "title": "¡Somos Aficionados!",
+    "subtitle": "Importadores boutique de marcas exclusivas en Puerto Rico",
+    "cta": "Explorar portafolio",
+    "ctaSecondary": "Visitar sala de degustación"
+  },
+  "stats": {
+    "founded": "Fundado",
+    "foundedValue": "2011",
+    "labels": "Etiquetas exclusivas",
+    "labelsValue": "400+",
+    "market": "Mercado",
+    "marketValue": "Puerto Rico"
+  },
+  "about": {
+    "eyebrow": "Nuestra historia",
+    "title": "Aficionados Wine & Spirits",
+    "paragraph1": "Fundado en el 2011, Aficionados es un importador y distribuidor boutique de marcas exclusivas de vinos, espíritus destilados y cervezas artesanales que atiende el mercado de Puerto Rico. Nos esforzamos por recopilar hallazgos únicos, impulsar el entusiasmo y la pasión, ofreciendo un valor diferenciado en un mercado abarrotado con una multitud de opciones.",
+    "paragraph2": "En la actualidad somos distribuidores exclusivos de más de 400 etiquetas diferentes de bodegas, destilerías y cervecerías. Nuestro portafolio abarca desde vinos de Argentina, certificados orgánicos y veganos, producciones limitadas de regiones conocidas como Napa y Borgoña, productores Italianos reconocidos a nivel mundial, destilaciones en lotes pequeños, licores eclécticos y proyectos especializados de cervezas artesanales."
+  },
+  "portfolio": {
+    "eyebrow": "Nuestras Marcas",
+    "title": "Portafolio",
+    "description": "Una selección curada de bodegas, destilerías y cervecerías que representamos con exclusividad en Puerto Rico.",
+    "filters": {
+      "all": "Todos",
+      "wine": "Vinos",
+      "spirits": "Espíritus",
+      "beer": "Cervezas",
+      "liqueurs": "Licores"
+    }
+  },
+  "values": {
+    "eyebrow": "Quiénes somos",
+    "title": "Nuestra filosofía",
+    "mission": {
+      "title": "Misión",
+      "body": "Dedicados a sorprender y deleitar a nuestros clientes con los vinos, licores y cervezas que apasionadamente representamos. A través de nuestro canal de distribución en nuestras marcas exclusivas, proporcionamos una solución integral de gestión de marca a nuestros clientes, proveedores y socios en los negocios."
+    },
+    "vision": {
+      "title": "Visión",
+      "body": "Brindar experiencias únicas y memorables. A través de nuestro portafolio y sus historias ayudaremos a crear y expandir el conocimiento, proporcionando así una plataforma para nuevos descubrimientos y disfrute."
+    },
+    "principles": {
+      "title": "Valores",
+      "body": "Pasión: Somos aficionados vívidos de lo que hacemos y de las marcas que representamos. Devoción: Estamos comprometidos a sumergir a nuestros clientes en nuevas y mejores experiencias. Integridad: real, honesta, abierta, ética, justa y siempre, siempre hacer lo correcto."
+    }
+  },
+  "tasting": {
+    "eyebrow": "Experiencia",
+    "title": "¡Experiencie nuestra sala de degustación!",
+    "body": "Ubicado en el edificio #39 en la calle Frances de Amelia Ind. Park en Guaynabo y abierto de lunes a viernes de 9:00 AM a 6:00 PM, nuestra sala de degustación está disponible para eventos privados o simplemente para probar algo nuevo con buenos amigos y compañía. Nuestro personal experto y atento está a su disposición — en Aficionados Wine & Spirits aspiramos a acompañarlos en ese viaje de creación de recuerdos.",
+    "cta": "Contáctenos"
+  },
+  "contact": {
+    "eyebrow": "Contáctenos",
+    "title": "Hablemos",
+    "description": "Estamos a su disposición para consultas comerciales, eventos privados y nuevos descubrimientos.",
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "submit": "Enviar mensaje",
+      "success": "Gracias. Su mensaje ha sido preparado para envío."
+    },
+    "findUs": "Encuéntrenos",
+    "hours": "Horario de atención",
+    "hoursValue": "Lunes a Viernes: 9:00 AM - 6:00 PM",
+    "address": "39 Calle Frances, Guaynabo, 00934, Puerto Rico",
+    "phone": "787-273-0403",
+    "emailInfo": "info@aficionadosinc.com",
+    "emailSales": "sales@aficionadosinc.com"
+  },
+  "footer": {
+    "tagline": "Importadores y distribuidores boutique desde 2011",
+    "rights": "© 2024 Aficionados Wine & Spirits. Todos los derechos reservados."
+  }
+}

@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-charcoal: #231f20;
+  --color-bronze: #a68966;
+  --color-bronze-light: #c5a073;
+  --color-cream: #f2f2e8;
+  --color-burgundy: #6b443c;
+  --color-ivory: #faf8f4;
+  --color-ink: #1a1714;
+  --color-muted: #8a7f75;
+  --font-display: var(--font-cormorant);
+  --font-body: var(--font-outfit);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-body), sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-bronze) 35%, white);
+  color: var(--color-ink);
+}
+
+.grain-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  z-index: 50;
+}
+
+.section-eyebrow {
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--color-bronze);
+}
+
+.section-title {
+  font-family: var(--font-display), serif;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+}
+
+.luxury-divider {
+  width: 4.5rem;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-bronze), transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
