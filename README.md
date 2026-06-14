@@ -31,6 +31,7 @@ public/assets/
 ├── brand/        # Aficionados logos
 ├── editorial/    # Mission, vision, values, tasting room
 ├── portfolio/    # 32 brand logos
+├── video/        # Cinematic hero video (wine pour)
 ├── reference/    # Before screenshots
 └── manifest.json # Source URLs + metadata
 ```

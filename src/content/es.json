@@ -5,6 +5,7 @@
   },
   "nav": {
     "about": "Nosotros",
+    "catalog": "Catálogo",
     "portfolio": "Portafolio",
     "values": "Quiénes somos",
     "tasting": "Degustación",
@@ -13,10 +14,12 @@
   },
   "hero": {
     "eyebrow": "¡Bienvenidos!",
-    "title": "¡Somos Aficionados!",
-    "subtitle": "Importadores boutique de marcas exclusivas en Puerto Rico",
-    "cta": "Explorar portafolio",
-    "ctaSecondary": "Visitar sala de degustación"
+    "titleLead": "Somos",
+    "titleTrail": "Aficionados",
+    "subtitle": "Importadores boutique de marcas exclusivas de vino y espíritus en Puerto Rico",
+    "cta": "Explorar catálogo",
+    "ctaSecondary": "Visitar sala de degustación",
+    "scroll": "Desplazar"
   },
   "stats": {
     "founded": "Fundado",
@@ -42,6 +45,57 @@
       "spirits": "Espíritus",
       "beer": "Cervezas",
       "liqueurs": "Licores"
+    }
+  },
+  "catalog": {
+    "eyebrow": "Catálogo exclusivo",
+    "title": "Lista de productos",
+    "description": "Rastree cada etiqueta por SKU, región, varietal y disponibilidad. Más de 400 referencias representadas — aquí una selección destacada del portafolio Aficionados.",
+    "searchPlaceholder": "Buscar por nombre, SKU, región o varietal...",
+    "results": "{count} productos encontrados",
+    "stats": {
+      "total": "Productos listados",
+      "wine": "Vinos",
+      "spirits": "Espíritus",
+      "exclusive": "Exclusivos PR"
+    },
+    "sort": {
+      "name": "Nombre",
+      "region": "Región",
+      "sku": "SKU"
+    },
+    "view": {
+      "grid": "Tarjetas",
+      "table": "Tabla"
+    },
+    "filters": {
+      "all": "Todos",
+      "wine": "Vinos",
+      "spirits": "Espíritus",
+      "liqueurs": "Licores"
+    },
+    "table": {
+      "sku": "SKU",
+      "product": "Producto",
+      "region": "Región",
+      "varietal": "Varietal",
+      "availability": "Disponibilidad"
+    },
+    "availability": {
+      "exclusive": "Exclusivo PR",
+      "limited": "Producción limitada",
+      "core": "Portafolio core"
+    },
+    "detail": {
+      "producer": "Productor",
+      "region": "Región",
+      "varietal": "Varietal",
+      "category": "Categoría",
+      "availability": "Disponibilidad",
+      "vintage": "Cosecha",
+      "organic": "Orgánico",
+      "yes": "Sí",
+      "inquire": "Consultar disponibilidad"
     }
   },
   "values": {

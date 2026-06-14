@@ -5,6 +5,7 @@
   },
   "nav": {
     "about": "About",
+    "catalog": "Catalog",
     "portfolio": "Portfolio",
     "values": "Who we are",
     "tasting": "Tasting Room",
@@ -13,10 +14,12 @@
   },
   "hero": {
     "eyebrow": "Welcome!",
-    "title": "We are Aficionados!",
-    "subtitle": "Boutique importers of exclusive brands in Puerto Rico",
-    "cta": "Explore portfolio",
-    "ctaSecondary": "Visit tasting room"
+    "titleLead": "We are",
+    "titleTrail": "Aficionados",
+    "subtitle": "Boutique importers of exclusive wine and spirits brands in Puerto Rico",
+    "cta": "Explore catalog",
+    "ctaSecondary": "Visit tasting room",
+    "scroll": "Scroll"
   },
   "stats": {
     "founded": "Founded",
@@ -42,6 +45,57 @@
       "spirits": "Spirits",
       "beer": "Beer",
       "liqueurs": "Liqueurs"
+    }
+  },
+  "catalog": {
+    "eyebrow": "Exclusive catalog",
+    "title": "Product listing",
+    "description": "Track every label by SKU, region, varietal, and availability. 400+ references represented — here is a featured selection from the Aficionados portfolio.",
+    "searchPlaceholder": "Search by name, SKU, region, or varietal...",
+    "results": "{count} products found",
+    "stats": {
+      "total": "Listed products",
+      "wine": "Wines",
+      "spirits": "Spirits",
+      "exclusive": "PR Exclusive"
+    },
+    "sort": {
+      "name": "Name",
+      "region": "Region",
+      "sku": "SKU"
+    },
+    "view": {
+      "grid": "Cards",
+      "table": "Table"
+    },
+    "filters": {
+      "all": "All",
+      "wine": "Wine",
+      "spirits": "Spirits",
+      "liqueurs": "Liqueurs"
+    },
+    "table": {
+      "sku": "SKU",
+      "product": "Product",
+      "region": "Region",
+      "varietal": "Varietal",
+      "availability": "Availability"
+    },
+    "availability": {
+      "exclusive": "PR Exclusive",
+      "limited": "Limited production",
+      "core": "Core portfolio"
+    },
+    "detail": {
+      "producer": "Producer",
+      "region": "Region",
+      "varietal": "Varietal",
+      "category": "Category",
+      "availability": "Availability",
+      "vintage": "Vintage",
+      "organic": "Organic",
+      "yes": "Yes",
+      "inquire": "Inquire availability"
     }
   },
   "values": {

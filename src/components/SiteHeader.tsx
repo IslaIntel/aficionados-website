@@ -7,6 +7,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 
 const sections = [
   { id: "about", key: "about" },
+  { id: "catalog", key: "catalog" },
   { id: "portfolio", key: "portfolio" },
   { id: "values", key: "values" },
   { id: "tasting", key: "tasting" },

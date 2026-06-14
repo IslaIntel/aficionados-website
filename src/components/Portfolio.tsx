@@ -21,6 +21,7 @@ export function Portfolio() {
   return (
     <section id="portfolio" className="relative overflow-hidden bg-cream px-6 py-24 lg:px-10 lg:py-32">
       <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle_at_1px_1px,#231f20_1px,transparent_0)] [background-size:28px_28px]" />
+      <div className="shimmer-line pointer-events-none absolute top-0 left-0 h-px w-full opacity-50" />
 
       <div className="relative mx-auto max-w-7xl">
         <SectionReveal>
