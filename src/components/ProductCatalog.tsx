@@ -1,13 +1,15 @@
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
+import { Link } from "@/i18n/navigation";
 import type { PortfolioCategory } from "@/lib/design-tokens";
-import { getProductStats, products, type Product } from "@/lib/products";
-import { BrandLogoPlate } from "./BrandLogoPlate";
-import { MotionOverlay } from "./MotionOverlay";
-import { SectionReveal } from "./SectionReveal";
+import { getProductBottleImage, getProductStats, products, type Product } from "@/lib/products";
+import { AvailabilityBadge } from "@/components/ProductAvailabilityBadge";
+import { BottleHeroPlate } from "@/components/BottleHeroPlate";
+import { MotionOverlay } from "@/components/MotionOverlay";
+import { SectionReveal } from "@/components/SectionReveal";
 
 type ViewMode = "grid" | "table";
 type SortKey = "name" | "region" | "sku";
@@ -16,14 +18,12 @@ const categories: PortfolioCategory[] = ["all", "wine", "spirits", "liqueurs"];
 
 export function ProductCatalog() {
   const t = useTranslations("catalog");
-  const reduceMotion = useReducedMotion();
   const stats = getProductStats();
 
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<PortfolioCategory>("all");
   const [sort, setSort] = useState<SortKey>("name");
   const [view, setView] = useState<ViewMode>("grid");
-  const [selected, setSelected] = useState<Product | null>(null);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -146,13 +146,13 @@ export function ProductCatalog() {
           <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {filtered.map((product, index) => (
               <SectionReveal key={product.sku} delay={(index % 6) * 0.05}>
-                <ProductCard product={product} onSelect={() => setSelected(product)} />
+                <ProductCard product={product} />
               </SectionReveal>
             ))}
           </div>
         ) : (
           <div className="overflow-x-auto border border-white/10">
-            <table className="w-full min-w-[760px] text-left text-sm">
+            <table className="w-full min-w-[860px] text-left text-sm">
               <thead className="border-b border-white/10 bg-white/[0.04] text-[0.65rem] tracking-[0.18em] text-bronze-light uppercase">
                 <tr>
                   <th className="px-4 py-4">{t("table.sku")}</th>
@@ -166,20 +166,40 @@ export function ProductCatalog() {
                 {filtered.map((product) => (
                   <tr
                     key={product.sku}
-                    className="cursor-pointer border-b border-white/5 transition hover:bg-white/[0.04]"
-                    onClick={() => setSelected(product)}
+                    className="border-b border-white/5 transition hover:bg-white/[0.04]"
                   >
                     <td className="px-4 py-4 font-mono text-xs text-bronze-light">{product.sku}</td>
                     <td className="px-4 py-4">
-                      <p className="font-medium text-white">{product.name}</p>
-                      <p className="text-xs text-white/45">{product.producer}</p>
+                      <Link
+                        href={`/catalog/${product.slug}`}
+                        className="group flex items-center gap-4"
+                      >
+                        <div className="relative flex h-16 w-12 shrink-0 items-end justify-center overflow-hidden border border-white/10 bg-[linear-gradient(180deg,#2a2622_0%,#0f0e0c_100%)] px-1 pb-1">
+                          <Image
+                            src={getProductBottleImage(product)}
+                            alt={`${product.name} bottle`}
+                            width={40}
+                            height={56}
+                            className="max-h-14 w-auto object-contain object-bottom drop-shadow-[0_8px_16px_rgba(0,0,0,0.45)]"
+                          />
+                        </div>
+                        <div>
+                          <p className="font-medium text-white transition group-hover:text-bronze-light">
+                            {product.name}
+                          </p>
+                          <p className="text-xs text-white/45">{product.producer}</p>
+                        </div>
+                      </Link>
                     </td>
                     <td className="px-4 py-4 text-white/70">
                       {product.region}, {product.country}
                     </td>
                     <td className="px-4 py-4 text-white/70">{product.varietal}</td>
                     <td className="px-4 py-4">
-                      <AvailabilityBadge availability={product.availability} label={t(`availability.${product.availability}`)} />
+                      <AvailabilityBadge
+                        availability={product.availability}
+                        label={t(`availability.${product.availability}`)}
+                      />
                     </td>
                   </tr>
                 ))}
@@ -188,141 +208,47 @@ export function ProductCatalog() {
           </div>
         )}
       </div>
-
-      <AnimatePresence>
-        {selected && (
-          <ProductDetailModal product={selected} onClose={() => setSelected(null)} reduceMotion={!!reduceMotion} />
-        )}
-      </AnimatePresence>
     </section>
   );
 }
 
-function ProductCard({
-  product,
-  onSelect,
-}: {
-  product: Product;
-  onSelect: () => void;
-}) {
+function ProductCard({ product }: { product: Product }) {
   const t = useTranslations("catalog");
 
   return (
-    <button
-      type="button"
-      onClick={onSelect}
-      className="group w-full border border-white/10 bg-white/[0.03] p-6 text-left transition duration-500 hover:-translate-y-1 hover:border-bronze/40 hover:bg-white/[0.06]"
+    <Link
+      href={`/catalog/${product.slug}`}
+      className="group block w-full border border-white/10 bg-white/[0.03] text-left transition duration-500 hover:-translate-y-1 hover:border-bronze/40 hover:bg-white/[0.06]"
     >
-      <div className="mb-5 flex items-start justify-between gap-4">
-        <span className="font-mono text-[0.65rem] tracking-[0.12em] text-bronze-light">
-          {product.sku}
-        </span>
-        <AvailabilityBadge availability={product.availability} label={t(`availability.${product.availability}`)} />
-      </div>
-
-      <div className="mb-5">
-        <BrandLogoPlate src={product.image} alt={product.name} />
-      </div>
-
-      <h3 className="font-display mb-1 text-xl text-white">{product.name}</h3>
-      <p className="mb-3 text-xs text-white/45">{product.producer}</p>
-      <p className="text-sm text-white/65">
-        {product.region}, {product.country}
-      </p>
-      <p className="mt-2 text-xs tracking-[0.14em] text-bronze-light uppercase">
-        {product.varietal}
-      </p>
-    </button>
-  );
-}
-
-function AvailabilityBadge({
-  availability,
-  label,
-}: {
-  availability: Product["availability"];
-  label: string;
-}) {
-  const styles = {
-    exclusive: "border-bronze-light/50 bg-bronze/20 text-bronze-light",
-    limited: "border-white/25 bg-white/10 text-white/80",
-    core: "border-white/15 bg-transparent text-white/55",
-  };
-
-  return (
-    <span className={`inline-block border px-2 py-1 text-[0.58rem] tracking-[0.16em] uppercase ${styles[availability]}`}>
-      {label}
-    </span>
-  );
-}
-
-function ProductDetailModal({
-  product,
-  onClose,
-  reduceMotion,
-}: {
-  product: Product;
-  onClose: () => void;
-  reduceMotion: boolean;
-}) {
-  const t = useTranslations("catalog");
-
-  return (
-    <motion.div
-      className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 p-4 sm:items-center"
-      initial={reduceMotion ? false : { opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      onClick={onClose}
-    >
-      <motion.div
-        className="relative w-full max-w-2xl border border-white/15 bg-charcoal p-8 shadow-2xl"
-        initial={reduceMotion ? false : { opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 20 }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          type="button"
-          onClick={onClose}
-          className="absolute top-4 right-4 text-white/50 transition hover:text-white"
-          aria-label="Close"
-        >
-          ✕
-        </button>
-
-        <p className="mb-2 font-mono text-xs text-bronze-light">{product.sku}</p>
-        <h3 className="font-display mb-6 text-3xl text-white">{product.name}</h3>
-
-        <div className="mb-6">
-          <BrandLogoPlate src={product.image} alt={product.name} height="lg" />
+      <div className="p-6 pb-0">
+        <div className="mb-4 flex items-start justify-between gap-4">
+          <span className="font-mono text-[0.65rem] tracking-[0.12em] text-bronze-light">
+            {product.sku}
+          </span>
+          <AvailabilityBadge
+            availability={product.availability}
+            label={t(`availability.${product.availability}`)}
+          />
         </div>
 
-        <dl className="grid gap-4 sm:grid-cols-2">
-          {[
-            [t("detail.producer"), product.producer],
-            [t("detail.region"), `${product.region}, ${product.country}`],
-            [t("detail.varietal"), product.varietal],
-            [t("detail.category"), t(`filters.${product.category}`)],
-            [t("detail.availability"), t(`availability.${product.availability}`)],
-            ...(product.vintage ? [[t("detail.vintage"), product.vintage] as const] : []),
-            ...(product.organic ? [[t("detail.organic"), t("detail.yes")] as const] : []),
-          ].map(([label, value]) => (
-            <div key={label} className="border border-white/10 bg-white/[0.03] px-4 py-3">
-              <dt className="text-[0.62rem] tracking-[0.18em] text-white/40 uppercase">{label}</dt>
-              <dd className="mt-1 text-sm text-white/85">{value}</dd>
-            </div>
-          ))}
-        </dl>
+        <BottleHeroPlate product={product} height="md" />
+      </div>
 
-        <a
-          href="#contact"
-          onClick={onClose}
-          className="mt-8 inline-flex border border-bronze/50 bg-bronze/15 px-6 py-3 text-[0.68rem] tracking-[0.22em] text-bronze-light uppercase transition hover:bg-bronze/25"
-        >
-          {t("detail.inquire")}
-        </a>
-      </motion.div>
-    </motion.div>
+      <div className="p-6 pt-5">
+        <h3 className="font-display mb-1 text-xl text-white transition group-hover:text-bronze-light">
+          {product.name}
+        </h3>
+        <p className="mb-3 text-xs text-white/45">{product.producer}</p>
+        <p className="text-sm text-white/65">
+          {product.region}, {product.country}
+        </p>
+        <p className="mt-2 text-xs tracking-[0.14em] text-bronze-light uppercase">
+          {product.varietal}
+        </p>
+        <p className="mt-4 text-[0.62rem] tracking-[0.18em] text-white/45 uppercase transition group-hover:text-bronze-light">
+          {t("page.viewDetails")} →
+        </p>
+      </div>
+    </Link>
   );
 }

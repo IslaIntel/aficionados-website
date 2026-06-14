@@ -19,7 +19,8 @@
     "subtitle": "Importadores boutique de marcas exclusivas de vino y espíritus en Puerto Rico",
     "cta": "Explorar catálogo",
     "ctaSecondary": "Visitar sala de degustación",
-    "scroll": "Desplazar"
+    "scroll": "Desplazar",
+    "asSeenIn": "Presencia en medios"
   },
   "stats": {
     "founded": "Fundado",
@@ -96,6 +97,12 @@
       "organic": "Orgánico",
       "yes": "Sí",
       "inquire": "Consultar disponibilidad"
+    },
+    "page": {
+      "backToCatalog": "Volver al catálogo",
+      "viewDetails": "Ver detalles",
+      "visitProducer": "Visitar productor",
+      "brandIdentity": "Identidad de marca"
     }
   },
   "values": {

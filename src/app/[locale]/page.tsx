@@ -1,7 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { HeroOverlap } from "@/components/HeroOverlap";
 import { StatsBar } from "@/components/StatsBar";
-import { BrandMarquee } from "@/components/BrandMarquee";
 import { About } from "@/components/About";
 import { ProductCatalog } from "@/components/ProductCatalog";
 import { Portfolio } from "@/components/Portfolio";
@@ -21,7 +20,6 @@ export default async function HomePage({
     <>
       <HeroOverlap>
         <StatsBar />
-        <BrandMarquee />
         <About />
         <ProductCatalog />
         <Portfolio />

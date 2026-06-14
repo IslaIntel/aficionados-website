@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "pull-assets": "node scripts/pull-assets.mjs"
+    "pull-assets": "node scripts/pull-assets.mjs",
+    "pull-bottles": "node scripts/pull-bottle-assets.mjs",
+    "pull-press-logos": "node scripts/pull-press-logos.mjs",
+    "process-press-logos": "node scripts/process-press-logos.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",

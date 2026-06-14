@@ -19,7 +19,8 @@
     "subtitle": "Boutique importers of exclusive wine and spirits brands in Puerto Rico",
     "cta": "Explore catalog",
     "ctaSecondary": "Visit tasting room",
-    "scroll": "Scroll"
+    "scroll": "Scroll",
+    "asSeenIn": "As seen in"
   },
   "stats": {
     "founded": "Founded",
@@ -96,6 +97,12 @@
       "organic": "Organic",
       "yes": "Yes",
       "inquire": "Inquire availability"
+    },
+    "page": {
+      "backToCatalog": "Back to catalog",
+      "viewDetails": "View details",
+      "visitProducer": "Visit producer",
+      "brandIdentity": "Brand identity"
     }
   },
   "values": {

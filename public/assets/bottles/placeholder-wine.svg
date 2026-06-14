@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 420" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="wineGlass" x1="100" y1="40" x2="100" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3d1f24" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#5c2430" stop-opacity="0.88"/>
+      <stop offset="1" stop-color="#2a1218" stop-opacity="0.92"/>
+    </linearGradient>
+    <linearGradient id="wineHighlight" x1="70" y1="80" x2="130" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="wineLabel" x1="100" y1="180" x2="100" y2="290" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f5efe6" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#e8dcc8" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="392" rx="42" ry="8" fill="#000" fill-opacity="0.35"/>
+  <path d="M88 36h24l8 34v18c0 18-10 28-20 34v224c0 10-8 18-18 18H98c-10 0-18-8-18-18V122c-10-6-20-16-20-34V70l8-34z" fill="url(#wineGlass)"/>
+  <path d="M92 42h16l6 28v16c0 14-8 22-16 28v228c0 6-5 11-11 11H97c-6 0-11-5-11-11V114c-8-6-16-14-16-28V70l6-28z" fill="url(#wineHighlight)"/>
+  <rect x="72" y="188" width="56" height="92" rx="2" fill="url(#wineLabel)"/>
+  <rect x="94" y="8" width="12" height="28" rx="2" fill="#2a2420"/>
+</svg>
