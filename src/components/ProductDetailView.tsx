@@ -21,7 +21,7 @@ export function ProductDetailView({ product }: { product: Product }) {
       <div className="relative mx-auto max-w-6xl">
         <SectionReveal>
           <Link
-            href="/#catalog"
+            href="/catalog"
             className="mb-8 inline-flex items-center gap-2 text-[0.68rem] tracking-[0.2em] text-bronze-light uppercase transition hover:text-white"
           >
             <span aria-hidden="true">←</span>
@@ -37,9 +37,6 @@ export function ProductDetailView({ product }: { product: Product }) {
           <SectionReveal delay={0.1}>
             <div>
               <div className="mb-4 flex flex-wrap items-center gap-3">
-                <span className="font-mono text-xs tracking-[0.12em] text-bronze-light">
-                  {product.sku}
-                </span>
                 <AvailabilityBadge
                   availability={product.availability}
                   label={t(`availability.${product.availability}`)}
@@ -53,9 +50,9 @@ export function ProductDetailView({ product }: { product: Product }) {
                 {product.producer}
               </p>
 
-              <p className="mb-8 max-w-xl text-base leading-8 text-white/70">
-                {description}
-              </p>
+              {description ? (
+                <p className="mb-8 max-w-xl text-base leading-8 text-white/70">{description}</p>
+              ) : null}
 
               <dl className="grid gap-4 sm:grid-cols-2">
                 {[
@@ -64,8 +61,6 @@ export function ProductDetailView({ product }: { product: Product }) {
                   [t("detail.varietal"), product.varietal],
                   [t("detail.category"), t(`filters.${product.category}`)],
                   [t("detail.availability"), t(`availability.${product.availability}`)],
-                  ...(product.vintage ? [[t("detail.vintage"), product.vintage] as const] : []),
-                  ...(product.organic ? [[t("detail.organic"), t("detail.yes")] as const] : []),
                 ].map(([label, value]) => (
                   <div key={label} className="border border-white/10 bg-white/[0.03] px-4 py-3">
                     <dt className="text-[0.62rem] tracking-[0.18em] text-white/40 uppercase">
@@ -77,12 +72,12 @@ export function ProductDetailView({ product }: { product: Product }) {
               </dl>
 
               <div className="mt-8 flex flex-wrap gap-4">
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="inline-flex border border-bronze/50 bg-bronze/15 px-6 py-3 text-[0.68rem] tracking-[0.22em] text-bronze-light uppercase transition hover:bg-bronze/25"
                 >
                   {t("detail.inquire")}
-                </a>
+                </Link>
                 {product.producerUrl && (
                   <a
                     href={product.producerUrl}

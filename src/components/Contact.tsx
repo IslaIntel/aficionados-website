@@ -34,6 +34,21 @@ export function Contact() {
           <div className="luxury-divider mb-8 bg-gradient-to-r from-bronze-light to-transparent" />
           <p className="mb-10 max-w-md text-base leading-8 text-white/75">{t("description")}</p>
 
+          <div className="mb-10 grid gap-4 sm:grid-cols-2">
+            <div className="border border-white/10 bg-white/[0.04] px-4 py-4">
+              <p className="mb-2 text-[0.65rem] tracking-[0.2em] text-bronze-light uppercase">
+                {t("tradeTitle")}
+              </p>
+              <p className="text-sm leading-6 text-white/75">{t("tradeBody")}</p>
+            </div>
+            <div className="border border-white/10 bg-white/[0.04] px-4 py-4">
+              <p className="mb-2 text-[0.65rem] tracking-[0.2em] text-bronze-light uppercase">
+                {t("eventsTitle")}
+              </p>
+              <p className="text-sm leading-6 text-white/75">{t("eventsBody")}</p>
+            </div>
+          </div>
+
           <div className="space-y-5 text-sm">
             <div>
               <p className="mb-1 tracking-[0.18em] text-bronze-light uppercase">{t("findUs")}</p>

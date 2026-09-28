@@ -1,12 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { HeroOverlap } from "@/components/HeroOverlap";
-import { StatsBar } from "@/components/StatsBar";
-import { About } from "@/components/About";
-import { ProductCatalog } from "@/components/ProductCatalog";
-import { Portfolio } from "@/components/Portfolio";
-import { Values } from "@/components/Values";
-import { TastingRoom } from "@/components/TastingRoom";
-import { Contact } from "@/components/Contact";
+import { HomeLanding } from "@/components/HomeLanding";
 
 export default async function HomePage({
   params,
@@ -16,17 +9,5 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return (
-    <>
-      <HeroOverlap>
-        <StatsBar />
-        <About />
-        <ProductCatalog />
-        <Portfolio />
-        <Values />
-        <TastingRoom />
-        <Contact />
-      </HeroOverlap>
-    </>
-  );
+  return <HomeLanding />;
 }

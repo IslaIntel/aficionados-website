@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Aficionados INC | Wine & Spirits",
-    "description": "Boutique importer and distributor of exclusive wines, spirits, and craft beer in Puerto Rico since 2011."
+    "title": "Aficionados Wine and Spirits",
+    "description": "Boutique specialty importer and distributor of wines, spirits, beer and non-alcoholic beverages in Puerto Rico since 2011."
   },
   "nav": {
     "about": "About",
-    "catalog": "Catalog",
+    "catalog": "Portfolio",
     "portfolio": "Portfolio",
     "values": "Who we are",
     "tasting": "Tasting Room",
@@ -16,8 +16,8 @@
     "eyebrow": "Welcome!",
     "titleLead": "We are",
     "titleTrail": "Aficionados",
-    "subtitle": "Boutique importers of exclusive wine and spirits brands in Puerto Rico",
-    "cta": "Explore catalog",
+    "subtitle": "Specialty importer and distributor of alcoholic and non-alcoholic beverage brands in Puerto Rico",
+    "cta": "Discover Portfolio",
     "ctaSecondary": "Visit tasting room",
     "scroll": "Scroll",
     "asSeenIn": "As seen in"
@@ -26,34 +26,44 @@
     "founded": "Founded",
     "foundedValue": "2011",
     "labels": "Exclusive labels",
-    "labelsValue": "400+",
+    "labelsValue": "700+",
     "market": "Market",
     "marketValue": "Puerto Rico"
   },
   "about": {
     "eyebrow": "Our story",
     "title": "Aficionados Wine & Spirits",
-    "paragraph1": "Formed in 2011, Aficionados is a boutique importer and distributor of specialty wines, spirits and beer brands serving the Puerto Rico market. We strive to collect unique finds, drive enthusiasm and passion, while offering a differentiated value in an already crowded marketplace.",
-    "paragraph2": "Currently, we exclusively sell and distribute over 400 different labels from wineries, distilleries and breweries. Our brand portfolio ranges from wines from Argentina, certified organic and vegan, limited productions from renowned regions such as Napa and Burgundy, world renowned Italian producers, small batch distillations, eclectic liqueurs and specialized craft beer projects."
+    "paragraph1": "Aficionados is a boutique importer and distributor of specialty wines, spirits, beer and non-alcoholic beverage brands serving the Puerto Rico market since 2011. Our philosophy is simple: seek out producers with authenticity, craftsmanship, and a compelling story, then connect them with customers who value quality and a differentiated value in a very crowded space. Aficionados is devoted to being Puerto Rico’s trusted destination for thoughtfully curated beverages, fostering a culture of exploration, appreciation, and memorable experiences.",
+    "paragraph2": "The portfolio includes more than 700 labels sourced from respected wineries, distilleries, and beverage producers around the world. From acclaimed estates in Napa, Bordeaux, and Tuscany to emerging producers, organic vineyards, artisanal spirits, and innovative craft projects, each selection is chosen for its character, quality, and sense of place. The highest aspiration is to enrich experiences and create lasting connections between producers, customers and consumers.",
+    "channelsEyebrow": "How we serve",
+    "channelsTitle": "Importer. Distributor. Destination.",
+    "wholesaleTitle": "Trade",
+    "wholesaleBody": "We wholesale wine, spirits, beer, and non-alcoholic brands to on- and off-premise customers across Puerto Rico.",
+    "destinationTitle": "Tasting room",
+    "destinationBody": "Headquarters and tasting room at #39 Frances St., Amelia Industrial Park, Guaynabo — retail discovery Monday to Friday, 9:00 AM to 6:00 PM."
   },
   "portfolio": {
-    "eyebrow": "Our Brands",
+    "eyebrow": "Brands",
     "title": "Portfolio",
-    "description": "A curated selection of wineries, distilleries, and breweries we represent exclusively in Puerto Rico.",
+    "description": "A curated selection of wineries, distilleries, breweries and producers we represent exclusively in Puerto Rico.",
     "filters": {
       "all": "All",
       "wine": "Wine",
       "spirits": "Spirits",
       "beer": "Beer",
-      "liqueurs": "Liqueurs"
+      "liqueurs": "Liqueurs",
+      "glassware": "Glassware",
+      "grocery": "Grocery",
+      "nonfood": "Non-food",
+      "mixers": "Non-alcoholic beverages and mixers"
     }
   },
   "catalog": {
-    "eyebrow": "Exclusive catalog",
-    "title": "Product listing",
-    "description": "Track every label by SKU, region, varietal, and availability. 400+ references represented — here is a featured selection from the Aficionados portfolio.",
-    "searchPlaceholder": "Search by name, SKU, region, or varietal...",
-    "results": "{count} products found",
+    "eyebrow": "Exclusive portfolio",
+    "title": "The Portfolio",
+    "description": "A numbered edit of the house — 700+ references, framed in the rooms, bars, and tables where they belong. Official pack shots replace these stills as they arrive.",
+    "searchPlaceholder": "Search by name, category, type, region, or varietal.",
+    "results": "{count} selections available",
     "stats": {
       "total": "Listed products",
       "wine": "Wines",
@@ -66,14 +76,21 @@
       "sku": "SKU"
     },
     "view": {
+      "listicle": "Editorial",
       "grid": "Cards",
       "table": "Table"
     },
+    "featured": "Featured",
     "filters": {
       "all": "All",
       "wine": "Wine",
       "spirits": "Spirits",
-      "liqueurs": "Liqueurs"
+      "beer": "Beer",
+      "liqueurs": "Liqueurs",
+      "glassware": "Glassware",
+      "grocery": "Grocery",
+      "nonfood": "Non-food",
+      "mixers": "Non-alcoholic beverages and mixers"
     },
     "table": {
       "sku": "SKU",
@@ -110,27 +127,41 @@
     "title": "Our philosophy",
     "mission": {
       "title": "Mission",
-      "body": "Devoted to surprise and delight customers with the unique wines, spirits and beers we passionately and exclusively import, sell and distribute, while providing an all-encompassing brand management solution to our providers and partners in business."
+      "body": "Devoted to surprise and delight customers with the unique beverages we passionately and exclusively import, sell, and distribute, while providing an all-encompassing brand management solution to our providers and partners in business."
     },
     "vision": {
       "title": "Vision",
-      "body": "To provide unique and memorable brand experiences. Through our portfolio and their stories we will help create and expand knowledge, thus providing a platform for new discoveries and enjoyment."
+      "body": "To participate on every occasion memories are forged."
     },
     "principles": {
       "title": "Values",
-      "body": "Passion: vivid fans of what we do and of the brands we represent. Devotion: committed to engage consumers in new and better experiences. Integrity: real, honest, open, ethical, fair and always, always do the right thing."
+      "body": "These principles guide every relationship we build.\nGreatness — Excellence is a standard, never a destination.\nCollaboration — Great partnerships create lasting value.\nAccountability — Ownership defines our work and our reputation.\nSimplicity — More is said and done with less.\nPassion — Vivid fans of what we do and the brands we represent.\nDevotion — Committed to new and better experiences.\nIntegrity — Real, honest, open, always do the right thing."
     }
   },
   "tasting": {
     "eyebrow": "Experience",
     "title": "Experience our Tasting Room!",
-    "body": "Located in #39 Frances St. Amelia Ind. Park in Guaynabo and open from Monday to Friday from 9:00 AM to 6:00 PM, our tasting room is available for private events or simply to try something new with good friends and company. Our knowledgeable and attentive staff is at your disposal — at Aficionados Wine & Spirits we aspire to accompany you on that memory-making journey.",
-    "cta": "Contact Us"
+    "body": "Located in Guaynabo, the tasting room is a place for exploration, conversation, and discovery. Whether attending a private event, sampling a new producer, or deepening your appreciation for wine and spirits, guests are welcomed by a knowledgeable team dedicated to making every visit engaging and memorable. Open from Monday to Friday from 9:00 AM to 6:00 PM.",
+    "cta": "Contact Us",
+    "detailsEyebrow": "Visit",
+    "detailsTitle": "Hours, events, and tastings",
+    "locationLabel": "Find us",
+    "addressDetail": "#39 Frances St., Amelia Industrial Park, Guaynabo, Puerto Rico 00934",
+    "hoursLabel": "Hours of operation",
+    "hoursDetail": "Monday to Friday, 9:00 AM to 6:00 PM",
+    "eventsLabel": "Private events",
+    "eventsBody": "An intimate setting for private tastings, educational gatherings, corporate events, and celebrations.",
+    "tradeLabel": "Trade visits",
+    "tradeBody": "Hospitality professionals are invited to explore the portfolio with guided tastings tailored to their program and objectives. Inquire to arrange a visit."
   },
   "contact": {
     "eyebrow": "Contact Us",
-    "title": "Let's talk",
-    "description": "We are at your service for trade inquiries, private events, and new discoveries.",
+    "title": "Start the conversation",
+    "description": "Whether you're seeking portfolio information, planning an event, or exploring a new partnership, we would be pleased to hear from you.",
+    "tradeTitle": "Trade",
+    "tradeBody": "Restaurants, hotels, retailers, and on-premise programs — write sales@aficionadosinc.com.",
+    "eventsTitle": "Events",
+    "eventsBody": "Private tastings and tasting-room bookings — write info@aficionadosinc.com.",
     "form": {
       "name": "Name",
       "email": "Email",
@@ -142,120 +173,81 @@
     "findUs": "Where to find us",
     "hours": "Hours of operation",
     "hoursValue": "Monday to Friday: 9:00 AM - 6:00 PM",
-    "address": "39 Calle Frances, Guaynabo, 00934, Puerto Rico",
+    "address": "39 Calle Frances, Amelia Industrial Park, Guaynabo, 00968, Puerto Rico",
     "phone": "787-273-0403",
     "emailInfo": "info@aficionadosinc.com",
     "emailSales": "sales@aficionadosinc.com"
   },
   "footer": {
-    "tagline": "Boutique importers and distributors since 2011",
-    "rights": "© 2026 Aficionados Wine & Spirits. All rights reserved."
+    "tagline": "Celebrate what brings us together",
+    "rights": "© 2026 Aficionados Wine & Spirits, Inc. All rights reserved."
   },
-  "concepts": {
-    "switcher": {
-      "label": "View",
-      "a": "A",
-      "b": "B",
-      "c": "C",
-      "hub": "Hub"
-    },
-    "hub": {
-      "eyebrow": "Design direction review",
-      "title": "Three ways to land the Aficionados brand",
-      "lede": "Same brand DNA — colors, logo, story, portfolio — three intrinsically different page structures so we can pick a lane.",
-      "how": "Open each concept on phone and desktop. Use the sticky A / B / C bar to flip. Note which direction feels right — or which traits to mix.",
-      "live": "Current live homepage",
-      "cinemaTag": "Cinema Hospitality",
-      "cinemaTitle": "Dark immersive scroll",
-      "cinemaBody": "Memory-making as cinema. Full-bleed lifestyle hero, oversized type chapters, tasting room as climax.",
-      "bridgeTag": "Bridge Editorial",
-      "bridgeTitle": "Split magazine chapters",
-      "bridgeBody": "The deck’s grammar — numbered splits, bold sans, black↔white panels. Modern importer energy.",
-      "atelierTag": "Atelier Gallery",
-      "atelierTitle": "Light curatorial calm",
-      "atelierBody": "Simplicity as principle. Airy ivory grids, portfolio-first gallery, typographic values.",
-      "open": "Open concept"
-    },
-    "cinema": {
-      "vision": "Every occasion memories are forged",
-      "lede": "Boutique beverages, passionately imported — for the moments that become the story you tell.",
-      "ctaTrade": "Partner with us",
-      "ctaRoom": "Visit the tasting room",
-      "houseLabel": "The house",
-      "houseTitle": "Hidden gems, bridged to Puerto Rico",
-      "missionLine": "Devoted to surprise and delight — exclusively, passionately.",
-      "portfolioLabel": "The portfolio",
-      "portfolioTitle": "Curated for discovery",
-      "valuesLabel": "How we work",
-      "valuesTitle": "Core values",
-      "finaleTitle": "Let’s forge the next memory",
-      "finaleBody": "Whether you are a restaurant, hotel, retailer, or guest at the table — we would love to pour the next chapter with you.",
-      "values": {
-        "greatness": "Greatness",
-        "greatnessBody": "Good is just not enough.",
-        "collaboration": "Collaboration",
-        "collaborationBody": "Believe in the team.",
-        "accountability": "Accountability",
-        "accountabilityBody": "If it is to be, it’s up to me.",
-        "simplicity": "Simplicity",
-        "simplicityBody": "More is said and done with less.",
-        "passion": "Passion",
-        "passionBody": "Vivid fans of what we do and the brands we represent.",
-        "devotion": "Devotion",
-        "devotionBody": "Committed to new and better experiences.",
-        "integrity": "Integrity",
-        "integrityBody": "Real, honest, open — always do the right thing."
+  "home": {
+    "vision": "To participate on every occasion memories are forged.",
+    "lede": "Driven by curiosity, guided by taste and committed to discovering what deserves a place at the table. We seek out exceptional producers and remarkable craftsmanship curating a portfolio designed to elevate gatherings, celebrations and everyday moments alike.",
+    "ctaCatalog": "Discover portfolio",
+    "ctaTrade": "Partner with us",
+    "ctaRoom": "Visit the tasting room",
+    "houseLabel": "The house",
+    "houseTitle": "Masterful visionaries bursting onto the scene",
+    "readStory": "Read our story",
+    "missionLine": "Devoted to surprise and delight customers with unique beverages we passionately and exclusively import, sell, and distribute, while providing an all-encompassing brand management solution to our providers and partners in business.",
+    "portfolioLabel": "The portfolio",
+    "portfolioTitle": "Selected with purpose.",
+    "valuesLabel": "How we work",
+    "valuesTitle": "Core values",
+    "finaleTitle": "Let’s forge the next memory",
+    "finaleBody": "Whether you are building a wine program, elevating a cocktail menu, stocking a retail shelf, or gathering around a table, we look forward to being part of the experience.",
+    "slideshowEyebrow": "In frame",
+    "slides": {
+      "toast": {
+        "title": "The toast that starts the story",
+        "body": "Every great evening begins with anticipation—a shared bottle, good company, and a moment worth remembering."
+      },
+      "napa": {
+        "title": "Heights of Napa",
+        "body": "Celebrated estates and distinctive vineyards, selected for those who appreciate depth, character, and craftsmanship."
+      },
+      "counter": {
+        "title": "The tasting room",
+        "body": "Trade and curiosity meet at the enclave in Guaynabo — pour by pour, one story at a time."
+      },
+      "bar": {
+        "title": "Where the night finds its pour",
+        "body": "Spirits and mixers placed where service happens: the bar, the backbar, the last round."
+      },
+      "moments": {
+        "title": "Shared in Puerto Rico",
+        "body": "More than a product. Experiences shared across tables, bars, celebrations, and conversations. The moments that become the story you tell."
+      },
+      "craft": {
+        "title": "Craft in light",
+        "body": "Small productions and limited lots, shown in the light they were made for."
+      },
+      "curator": {
+        "title": "The curator’s eye",
+        "body": "Every producer is chosen with intention, reflecting the standards and philosophy that define the house."
+      },
+      "stone": {
+        "title": "Old world, new table",
+        "body": "Historic regions, timeless traditions, and wines that continue to inspire a new generation of enthusiasts."
       }
     },
-    "bridge": {
-      "kicker": "01 — The opportunity",
-      "title": "Bridge the",
-      "titleAccent": "hidden gems",
-      "lede": "Luxury shifted from possessions to experiences. Aficionados builds the bridge — boutique beverages from around the world, into Puerto Rico’s glasses.",
-      "ctaTrade": "Partner with us",
-      "ctaRoom": "Visit the tasting room",
-      "storyNum": "02",
-      "storyTag": "The story",
-      "storyTitle": "Friendship became the business",
-      "storyP1": "Lifelong friends spun a passion for discovering and collecting wine into a full-time vocation — bridging labels not available through traditional channels with enthusiastic consumers.",
-      "storyP2": "Understanding the shift toward unique, everyday boutique wine created the pathway for a new chapter in the category.",
-      "bizNum": "03",
-      "bizTag": "The business",
-      "bizTitle": "Importer. Distributor. Destination.",
-      "bizP1": "Aficionados specializes in wine, spirits, beer, and non-alcoholic solutions for the Puerto Rico market — wholesale to on- and off-premise, plus retail direct to consumer.",
-      "bizP2": "Hundreds of labels. A bonded warehouse. Our own fleet. Headquarters and tasting room in Amelia Industrial Park, Guaynabo.",
-      "stratNum": "04",
-      "stratTag": "The strategy",
-      "stratTitle": "Memories, forged",
-      "stratP1": "Vision: to participate on every occasion memories are forged. Mission: surprise and delight with the unique beverages we passionately and exclusively import, sell, and distribute.",
-      "stratP2": "A great glass is part of the conversation. We aspire that Aficionados accompanies you on that memory-making journey.",
-      "folioTitle": "05 — Portfolio",
-      "onTitle": "Fine dining to bars",
-      "onBody": "Hotels, resorts, private clubs, casual dining, creative kitchens, and neighborhood institutions — served via our own fleet and personnel.",
-      "offTitle": "Specialty to chains",
-      "offBody": "Coops, specialty stores, chains, and wholesale partners who want differentiated finds in a crowded shelf.",
-      "directTitle": "Tasting room",
-      "directBody": "Retail and discovery at #39 Frances St., Amelia Industrial Park, Guaynabo — where the portfolio meets the guest.",
-      "valuesTitle": "Core values",
-      "closeTitle": "Build the next",
-      "closeAccent": "bridge",
-      "closeBody": "Trade partners and tasting-room guests — same devotion, same portfolio, same standard: good is just not enough.",
-      "nextStep": "Next step"
-    },
-    "atelier": {
-      "eyebrow": "Aficionados · Guaynabo",
-      "title": "A curated house of unique beverages",
-      "lede": "We import and distribute boutique wine, spirits, beer, and non-alcoholic finds — with a tasting room open for discovery.",
-      "ctaTrade": "Partner with us",
-      "ctaRoom": "Visit the tasting room",
-      "galleryLabel": "The collection",
-      "galleryTitle": "Categories we steward",
-      "storyLabel": "Briefly",
-      "storyTitle": "Built on friendship and discovery",
-      "valuesLabel": "Principles",
-      "valuesTitle": "What we hold",
-      "closeTitle": "Come by the atelier",
-      "closeBody": "Trade inquiries and private tastings welcome. Good is just not enough."
+    "values": {
+      "greatness": "Greatness",
+      "greatnessBody": "Excellence is a standard, never a destination.",
+      "collaboration": "Collaboration",
+      "collaborationBody": "Great partnerships create lasting value.",
+      "accountability": "Accountability",
+      "accountabilityBody": "Ownership defines our work and our reputation.",
+      "simplicity": "Simplicity",
+      "simplicityBody": "More is said and done with less.",
+      "passion": "Passion",
+      "passionBody": "Vivid fans of what we do and the brands we represent.",
+      "devotion": "Devotion",
+      "devotionBody": "Committed to new and better experiences.",
+      "integrity": "Integrity",
+      "integrityBody": "Real, honest, open, always do the right thing."
     }
   }
 }

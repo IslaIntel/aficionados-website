@@ -5,14 +5,19 @@ import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
 
-const sections = [
-  { id: "about", key: "about" },
-  { id: "catalog", key: "catalog" },
-  { id: "portfolio", key: "portfolio" },
-  { id: "values", key: "values" },
-  { id: "tasting", key: "tasting" },
-  { id: "contact", key: "contact" },
+const links = [
+  { href: "/about", key: "about" },
+  { href: "/catalog", key: "catalog" },
+  { href: "/tasting", key: "tasting" },
+  { href: "/contact", key: "contact" },
 ] as const;
+
+function isActive(pathname: string, href: string) {
+  if (href === "/catalog") {
+    return pathname === "/catalog" || pathname.startsWith("/catalog/");
+  }
+  return pathname === href;
+}
 
 export function SiteHeader() {
   const t = useTranslations("nav");
@@ -27,6 +32,10 @@ export function SiteHeader() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   const switchLocale = locale === "es" ? "en" : "es";
 
@@ -58,14 +67,16 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
-          {sections.map((section) => (
-            <a
-              key={section.id}
-              href={`#${section.id}`}
-              className="text-[0.72rem] tracking-[0.22em] text-white/70 uppercase transition hover:text-bronze-light"
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`text-[0.72rem] tracking-[0.22em] uppercase transition hover:text-bronze-light ${
+                isActive(pathname, link.href) ? "text-bronze-light" : "text-white/70"
+              }`}
             >
-              {t(section.key)}
-            </a>
+              {t(link.key)}
+            </Link>
           ))}
         </nav>
 
@@ -93,15 +104,16 @@ export function SiteHeader() {
       {open && (
         <div className="border-t border-white/10 bg-charcoal px-6 py-6 lg:hidden">
           <nav className="flex flex-col gap-4">
-            {sections.map((section) => (
-              <a
-                key={section.id}
-                href={`#${section.id}`}
-                className="text-sm tracking-[0.18em] text-white/80 uppercase"
-                onClick={() => setOpen(false)}
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-sm tracking-[0.18em] uppercase ${
+                  isActive(pathname, link.href) ? "text-bronze-light" : "text-white/80"
+                }`}
               >
-                {t(section.key)}
-              </a>
+                {t(link.key)}
+              </Link>
             ))}
           </nav>
         </div>

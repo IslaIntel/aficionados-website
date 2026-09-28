@@ -8,7 +8,16 @@ import { BrandLogoPlate } from "./BrandLogoPlate";
 import { MotionOverlay } from "./MotionOverlay";
 import { SectionReveal } from "./SectionReveal";
 
-const filters: PortfolioCategory[] = ["all", "wine", "spirits", "beer", "liqueurs"];
+const filters: PortfolioCategory[] = [
+  "all",
+  "wine",
+  "spirits",
+  "beer",
+  "mixers",
+  "nonfood",
+  "glassware",
+  "grocery",
+];
 
 export function Portfolio() {
   const t = useTranslations("portfolio");

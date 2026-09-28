@@ -39,7 +39,9 @@ export function Values() {
                   <h3 className="font-display mb-4 text-2xl text-bronze-light">
                     {t(`${card.key}.title`)}
                   </h3>
-                  <p className="text-sm leading-7 text-white/72">{t(`${card.key}.body`)}</p>
+                  <p className="text-sm leading-7 whitespace-pre-line text-white/72">
+                    {t(`${card.key}.body`)}
+                  </p>
                 </div>
               </article>
             </SectionReveal>

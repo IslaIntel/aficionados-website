@@ -34,7 +34,13 @@
     "eyebrow": "Nuestra historia",
     "title": "Aficionados Wine & Spirits",
     "paragraph1": "Fundado en el 2011, Aficionados es un importador y distribuidor boutique de marcas exclusivas de vinos, espíritus destilados y cervezas artesanales que atiende el mercado de Puerto Rico. Nos esforzamos por recopilar hallazgos únicos, impulsar el entusiasmo y la pasión, ofreciendo un valor diferenciado en un mercado abarrotado con una multitud de opciones.",
-    "paragraph2": "En la actualidad somos distribuidores exclusivos de más de 400 etiquetas diferentes de bodegas, destilerías y cervecerías. Nuestro portafolio abarca desde vinos de Argentina, certificados orgánicos y veganos, producciones limitadas de regiones conocidas como Napa y Borgoña, productores Italianos reconocidos a nivel mundial, destilaciones en lotes pequeños, licores eclécticos y proyectos especializados de cervezas artesanales."
+    "paragraph2": "En la actualidad somos distribuidores exclusivos de más de 400 etiquetas diferentes de bodegas, destilerías y cervecerías. Nuestro portafolio abarca desde vinos de Argentina, certificados orgánicos y veganos, producciones limitadas de regiones conocidas como Napa y Borgoña, productores Italianos reconocidos a nivel mundial, destilaciones en lotes pequeños, licores eclécticos y proyectos especializados de cervezas artesanales.",
+    "channelsEyebrow": "Cómo servimos",
+    "channelsTitle": "Importador. Distribuidor. Destino.",
+    "wholesaleTitle": "Comercial",
+    "wholesaleBody": "Mayorista de vino, espíritus, cerveza y hallazgos no alcohólicos para cuentas on- y off-premise en Puerto Rico — restaurantes, hoteles, tiendas especializadas y cadenas.",
+    "destinationTitle": "Sala de degustación",
+    "destinationBody": "Sede y sala de degustación en #39 Frances St., Amelia Industrial Park, Guaynabo — descubrimiento retail de lunes a viernes, 9:00 AM a 6:00 PM."
   },
   "portfolio": {
     "eyebrow": "Nuestras Marcas",
@@ -45,13 +51,17 @@
       "wine": "Vinos",
       "spirits": "Espíritus",
       "beer": "Cervezas",
-      "liqueurs": "Licores"
+      "liqueurs": "Licores",
+      "glassware": "Cristalería",
+      "grocery": "Abarrotes",
+      "nonfood": "No alimentario",
+      "mixers": "Bebidas sin alcohol y mixers"
     }
   },
   "catalog": {
     "eyebrow": "Catálogo exclusivo",
     "title": "Lista de productos",
-    "description": "Rastree cada etiqueta por SKU, región, varietal y disponibilidad. Más de 400 referencias representadas — aquí una selección destacada del portafolio Aficionados.",
+    "description": "Una edición numerada de la casa — 31 etiquetas de más de 400 referencias, enmarcadas en las salas, bares y mesas donde pertenecen. Las tomas oficiales de botella reemplazan estas fotografías a medida que llegan.",
     "searchPlaceholder": "Buscar por nombre, SKU, región o varietal...",
     "results": "{count} productos encontrados",
     "stats": {
@@ -66,14 +76,21 @@
       "sku": "SKU"
     },
     "view": {
+      "listicle": "Editorial",
       "grid": "Tarjetas",
       "table": "Tabla"
     },
+    "featured": "Destacado",
     "filters": {
       "all": "Todos",
       "wine": "Vinos",
       "spirits": "Espíritus",
-      "liqueurs": "Licores"
+      "beer": "Cervezas",
+      "liqueurs": "Licores",
+      "glassware": "Cristalería",
+      "grocery": "Abarrotes",
+      "nonfood": "No alimentario",
+      "mixers": "Bebidas sin alcohol y mixers"
     },
     "table": {
       "sku": "SKU",
@@ -125,12 +142,26 @@
     "eyebrow": "Experiencia",
     "title": "¡Experiencie nuestra sala de degustación!",
     "body": "Ubicado en el edificio #39 en la calle Frances de Amelia Ind. Park en Guaynabo y abierto de lunes a viernes de 9:00 AM a 6:00 PM, nuestra sala de degustación está disponible para eventos privados o simplemente para probar algo nuevo con buenos amigos y compañía. Nuestro personal experto y atento está a su disposición — en Aficionados Wine & Spirits aspiramos a acompañarlos en ese viaje de creación de recuerdos.",
-    "cta": "Contáctenos"
+    "cta": "Contáctenos",
+    "detailsEyebrow": "Visítanos",
+    "detailsTitle": "Horario, eventos y degustaciones comerciales",
+    "locationLabel": "Encuéntrenos",
+    "addressDetail": "#39 Frances St., Amelia Industrial Park, Guaynabo, Puerto Rico 00934",
+    "hoursLabel": "Horario de atención",
+    "hoursDetail": "Lunes a viernes, 9:00 AM a 6:00 PM",
+    "eventsLabel": "Eventos privados",
+    "eventsBody": "La sala de degustación está disponible para eventos privados, o simplemente para probar algo nuevo con buenos amigos y compañía.",
+    "tradeLabel": "Visitas comerciales",
+    "tradeBody": "Los socios comerciales son bienvenidos a degustar el portafolio destacado con nuestro equipo — consulte para coordinar una visita."
   },
   "contact": {
     "eyebrow": "Contáctenos",
     "title": "Hablemos",
     "description": "Estamos a su disposición para consultas comerciales, eventos privados y nuevos descubrimientos.",
+    "tradeTitle": "Comercial",
+    "tradeBody": "Restaurantes, hoteles, retailers y programas on-premise — escriba a sales@aficionadosinc.com.",
+    "eventsTitle": "Eventos",
+    "eventsBody": "Degustaciones privadas y reservas de la sala — escriba a info@aficionadosinc.com.",
     "form": {
       "name": "Nombre",
       "email": "Email",
@@ -151,111 +182,72 @@
     "tagline": "Importadores y distribuidores boutique desde 2011",
     "rights": "© 2026 Aficionados Wine & Spirits. Todos los derechos reservados."
   },
-  "concepts": {
-    "switcher": {
-      "label": "Ver",
-      "a": "A",
-      "b": "B",
-      "c": "C",
-      "hub": "Hub"
-    },
-    "hub": {
-      "eyebrow": "Revisión de dirección de diseño",
-      "title": "Tres formas de aterrizar la marca Aficionados",
-      "lede": "El mismo ADN de marca — colores, logo, historia, portafolio — tres estructuras de página intrínsecamente distintas para elegir un camino.",
-      "how": "Abre cada concepto en teléfono y escritorio. Usa la barra A / B / C para cambiar. Anota qué dirección se siente bien — o qué rasgos mezclar.",
-      "live": "Homepage actual en vivo",
-      "cinemaTag": "Hospitalidad Cine",
-      "cinemaTitle": "Scroll inmersivo oscuro",
-      "cinemaBody": "Crear memorias como cine. Hero de lifestyle a sangre, tipografía grande, sala de degustación como clímax.",
-      "bridgeTag": "Editorial Puente",
-      "bridgeTitle": "Capítulos tipo magazine",
-      "bridgeBody": "La gramática del deck — splits numerados, sans bold, paneles negro↔blanco. Energía de importador moderno.",
-      "atelierTag": "Galería Atelier",
-      "atelierTitle": "Calma curatorial clara",
-      "atelierBody": "La simplicidad como principio. Grids marfil, galería de portafolio primero, valores tipográficos.",
-      "open": "Abrir concepto"
-    },
-    "cinema": {
-      "vision": "En cada ocasión se forjan memorias",
-      "lede": "Bebidas boutique, importadas con pasión — para los momentos que se vuelven la historia que cuentas.",
-      "ctaTrade": "Sé nuestro socio",
-      "ctaRoom": "Visita la sala de degustación",
-      "houseLabel": "La casa",
-      "houseTitle": "Joyas ocultas, puestas en Puerto Rico",
-      "missionLine": "Dedicados a sorprender y deleitar — exclusiva y apasionadamente.",
-      "portfolioLabel": "El portafolio",
-      "portfolioTitle": "Curado para descubrir",
-      "valuesLabel": "Cómo trabajamos",
-      "valuesTitle": "Valores centrales",
-      "finaleTitle": "Forjemos la próxima memoria",
-      "finaleBody": "Ya seas restaurante, hotel, retailer o invitado a la mesa — nos encantaría servir el próximo capítulo contigo.",
-      "values": {
-        "greatness": "Grandeza",
-        "greatnessBody": "Lo bueno simplemente no basta.",
-        "collaboration": "Colaboración",
-        "collaborationBody": "Creemos en el equipo.",
-        "accountability": "Responsabilidad",
-        "accountabilityBody": "Si ha de ser, depende de mí.",
-        "simplicity": "Simplicidad",
-        "simplicityBody": "Más se dice y se hace con menos.",
-        "passion": "Pasión",
-        "passionBody": "Fans vívidos de lo que hacemos y de las marcas que representamos.",
-        "devotion": "Devoción",
-        "devotionBody": "Comprometidos con experiencias nuevas y mejores.",
-        "integrity": "Integridad",
-        "integrityBody": "Reales, honestos, abiertos — siempre hacer lo correcto."
+  "home": {
+    "vision": "En cada ocasión se forjan memorias",
+    "lede": "Bebidas boutique, importadas con pasión — para los momentos que se vuelven la historia que cuentas.",
+    "ctaCatalog": "Explorar catálogo",
+    "ctaTrade": "Sé nuestro socio",
+    "ctaRoom": "Visita la sala de degustación",
+    "houseLabel": "La casa",
+    "houseTitle": "Joyas ocultas, puestas en Puerto Rico",
+    "readStory": "Leer nuestra historia",
+    "missionLine": "Dedicados a sorprender y deleitar — exclusiva y apasionadamente.",
+    "portfolioLabel": "El portafolio",
+    "portfolioTitle": "Curado para descubrir",
+    "valuesLabel": "Cómo trabajamos",
+    "valuesTitle": "Valores centrales",
+    "finaleTitle": "Forjemos la próxima memoria",
+    "finaleBody": "Ya seas restaurante, hotel, retailer o invitado a la mesa — nos encantaría servir el próximo capítulo contigo.",
+    "slideshowEyebrow": "En cuadro",
+    "slides": {
+      "toast": {
+        "title": "El brindis que abre la historia",
+        "body": "Hora dorada, una copa en alto, y la razón de la casa: que la ocasión se recuerde."
+      },
+      "napa": {
+        "title": "Las alturas de Napa",
+        "body": "Íconos de California, elegidos para la isla. Estructurados, complejos, pensados para la mesa que dura."
+      },
+      "counter": {
+        "title": "La sala de degustación",
+        "body": "El comercio y la curiosidad se encuentran en el mostrador de Guaynabo — copa a copa, etiqueta a etiqueta."
+      },
+      "bar": {
+        "title": "Donde la noche encuentra su copa",
+        "body": "Espíritus y mixers donde ocurre el servicio: la barra, el backbar, la última ronda."
+      },
+      "moments": {
+        "title": "Compartido en Puerto Rico",
+        "body": "Importamos el momento, no solo la botella — la compañía, la luz, la historia que se cuenta después."
+      },
+      "craft": {
+        "title": "Oficio a la luz",
+        "body": "Pequeñas producciones y lotes limitados, mostrados en la luz para la que fueron hechos."
+      },
+      "curator": {
+        "title": "El ojo del curador",
+        "body": "La edición de Javier: joyas ocultas, puestas en Puerto Rico, a la altura de la casa."
+      },
+      "stone": {
+        "title": "Viejo mundo, mesa nueva",
+        "body": "Bodegas europeas para un público caribeño — piedra, tiempo y una segunda copa."
       }
     },
-    "bridge": {
-      "kicker": "01 — La oportunidad",
-      "title": "Construye el",
-      "titleAccent": "puente",
-      "lede": "El lujo pasó de posesiones a experiencias. Aficionados construye el puente — bebidas boutique del mundo a las copas de Puerto Rico.",
-      "ctaTrade": "Sé nuestro socio",
-      "ctaRoom": "Visita la sala de degustación",
-      "storyNum": "02",
-      "storyTag": "La historia",
-      "storyTitle": "La amistad se volvió el negocio",
-      "storyP1": "Amigos de toda la vida convirtieron la pasión por descubrir y coleccionar vino en una vocación — conectando etiquetas fuera de canales tradicionales con consumidores entusiastas.",
-      "storyP2": "Entender el cambio hacia vinos boutique cotidianos abrió el camino a un nuevo capítulo en la categoría.",
-      "bizNum": "03",
-      "bizTag": "El negocio",
-      "bizTitle": "Importador. Distribuidor. Destino.",
-      "bizP1": "Aficionados se especializa en vino, espíritus, cerveza y soluciones no alcohólicas para Puerto Rico — mayoreo on y off premise, más retail directo al consumidor.",
-      "bizP2": "Cientos de etiquetas. Almacén bonded. Flota propia. Sede y sala de degustación en Amelia Industrial Park, Guaynabo.",
-      "stratNum": "04",
-      "stratTag": "La estrategia",
-      "stratTitle": "Memorias, forjadas",
-      "stratP1": "Visión: participar en cada ocasión donde se forjan memorias. Misión: sorprender y deleitar con las bebidas únicas que importamos, vendemos y distribuimos con pasión.",
-      "stratP2": "Una gran copa es parte de la conversación. Aspiramos a que Aficionados te acompañe en ese viaje de crear memorias.",
-      "folioTitle": "05 — Portafolio",
-      "onTitle": "Fine dining a bares",
-      "onBody": "Hoteles, resorts, clubes privados, casual dining, cocinas creativas e instituciones del barrio — servidos con flota y personal propio.",
-      "offTitle": "Especialidad a cadenas",
-      "offBody": "Coops, tiendas especializadas, cadenas y mayoristas que buscan hallazgos diferenciados en un anaquel saturado.",
-      "directTitle": "Sala de degustación",
-      "directBody": "Retail y descubrimiento en #39 Frances St., Amelia Industrial Park, Guaynabo — donde el portafolio encuentra al invitado.",
-      "valuesTitle": "Valores centrales",
-      "closeTitle": "Construyamos el próximo",
-      "closeAccent": "puente",
-      "closeBody": "Socios comerciales e invitados a la sala — misma devoción, mismo portafolio, mismo estándar: lo bueno no basta.",
-      "nextStep": "Siguiente paso"
-    },
-    "atelier": {
-      "eyebrow": "Aficionados · Guaynabo",
-      "title": "Una casa curada de bebidas únicas",
-      "lede": "Importamos y distribuimos vino, espíritus, cerveza y hallazgos no alcohólicos boutique — con una sala de degustación abierta al descubrimiento.",
-      "ctaTrade": "Sé nuestro socio",
-      "ctaRoom": "Visita la sala de degustación",
-      "galleryLabel": "La colección",
-      "galleryTitle": "Categorías que cuidamos",
-      "storyLabel": "En breve",
-      "storyTitle": "Construido sobre amistad y descubrimiento",
-      "valuesLabel": "Principios",
-      "valuesTitle": "Lo que sostenemos",
-      "closeTitle": "Ven al atelier",
-      "closeBody": "Consultas comerciales y degustaciones privadas bienvenidas. Lo bueno simplemente no basta."
+    "values": {
+      "greatness": "Grandeza",
+      "greatnessBody": "Lo bueno simplemente no basta.",
+      "collaboration": "Colaboración",
+      "collaborationBody": "Creemos en el equipo.",
+      "accountability": "Responsabilidad",
+      "accountabilityBody": "Si ha de ser, depende de mí.",
+      "simplicity": "Simplicidad",
+      "simplicityBody": "Más se dice y se hace con menos.",
+      "passion": "Pasión",
+      "passionBody": "Fans vívidos de lo que hacemos y de las marcas que representamos.",
+      "devotion": "Devoción",
+      "devotionBody": "Comprometidos con experiencias nuevas y mejores.",
+      "integrity": "Integridad",
+      "integrityBody": "Reales, honestos, abiertos — siempre hacer lo correcto."
     }
   }
 }

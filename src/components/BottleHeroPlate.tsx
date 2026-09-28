@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Product } from "@/lib/products";
-import { getProductBottleImage } from "@/lib/products";
+import { getProductSceneImage } from "@/lib/scenes";
 
 type BottleHeroPlateProps = {
   product: Product;
@@ -16,48 +16,41 @@ const heights = {
   xl: "h-[28rem]",
 };
 
-const imageHeights = {
-  sm: "max-h-40",
-  md: "max-h-52",
-  lg: "max-h-64",
-  xl: "max-h-[22rem]",
-};
-
 export function BottleHeroPlate({
   product,
   height = "md",
   className = "",
   showLogoLabel = true,
 }: BottleHeroPlateProps) {
-  const bottleSrc = getProductBottleImage(product);
-  const isSvg = bottleSrc.endsWith(".svg");
+  const sceneSrc = getProductSceneImage(product);
 
   return (
     <div
-      className={`relative flex ${heights[height]} flex-col items-center justify-end overflow-hidden border border-white/10 bg-[linear-gradient(180deg,#2a2622_0%,#171412_42%,#0f0e0c_100%)] px-6 pb-4 pt-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),inset_0_-24px_48px_rgba(0,0,0,0.45)] ${className}`}
+      className={`relative ${heights[height]} overflow-hidden border border-white/10 bg-charcoal ${className}`}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(197,160,115,0.16),transparent_62%)]" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-[radial-gradient(ellipse_at_50%_100%,rgba(197,160,115,0.08),transparent_70%)]" />
-      <div className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.35)_1px,transparent_0)] [background-size:14px_14px]" />
-
       <Image
-        src={bottleSrc}
-        alt={`${product.name} bottle`}
-        width={isSvg ? 200 : 320}
-        height={isSvg ? 420 : 640}
-        className={`relative z-10 w-auto object-contain object-bottom drop-shadow-[0_18px_36px_rgba(0,0,0,0.55)] ${imageHeights[height]}`}
+        src={sceneSrc}
+        alt={`${product.name} — ${product.region}`}
+        fill
+        className="object-cover transition duration-700 group-hover:scale-105"
+        sizes="(min-width: 1280px) 360px, (min-width: 640px) 50vw, 100vw"
         priority={height === "xl"}
       />
+      <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/35 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(197,160,115,0.16),transparent_58%)]" />
 
       {showLogoLabel && (
-        <div className="relative z-10 mt-4 flex h-10 w-full items-center justify-center border-t border-white/10 pt-3">
+        <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between gap-3 p-4">
           <Image
             src={product.image}
             alt={`${product.producer} logo`}
-            width={120}
-            height={40}
-            className="max-h-8 w-auto object-contain opacity-70"
+            width={140}
+            height={48}
+            className="max-h-10 w-auto object-contain drop-shadow-[0_8px_18px_rgba(0,0,0,0.55)]"
           />
+          <span className="text-[0.62rem] tracking-[0.16em] text-white/70 uppercase">
+            {product.region}
+          </span>
         </div>
       )}
     </div>

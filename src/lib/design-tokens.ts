@@ -20,4 +20,13 @@ export const designTokens = {
   },
 } as const;
 
-export type PortfolioCategory = "all" | "wine" | "spirits" | "beer" | "liqueurs";
+export type PortfolioCategory =
+  | "all"
+  | "wine"
+  | "spirits"
+  | "beer"
+  | "liqueurs"
+  | "glassware"
+  | "grocery"
+  | "nonfood"
+  | "mixers";

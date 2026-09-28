@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { MotionOverlay } from "./MotionOverlay";
 import { SectionReveal } from "./SectionReveal";
 
@@ -33,12 +34,12 @@ export function TastingRoom() {
           <h2 className="section-title mb-6 text-4xl text-charcoal lg:text-5xl">{t("title")}</h2>
           <div className="luxury-divider mb-8" />
           <p className="mb-10 text-base leading-8 text-muted">{t("body")}</p>
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="inline-flex items-center justify-center border border-charcoal bg-charcoal px-8 py-3 text-[0.72rem] tracking-[0.24em] text-bronze-light uppercase transition hover:bg-ink"
           >
             {t("cta")}
-          </a>
+          </Link>
         </SectionReveal>
       </div>
     </section>

@@ -1,5 +1,3 @@
-import type { PortfolioCategory } from "./design-tokens";
-
 export type ProductAvailability = "exclusive" | "limited" | "core";
 
 export type LocalizedText = {
@@ -14,7 +12,7 @@ export type Product = {
   producer: string;
   region: string;
   country: string;
-  category: Exclude<PortfolioCategory, "all" | "beer">;
+  category: "wine" | "spirits" | "liqueurs";
   varietal: string;
   availability: ProductAvailability;
   /** Brand logo used in portfolio and label strip */
@@ -45,9 +43,11 @@ function slugify(value: string) {
 function product(
   data: Omit<Product, "slug"> & { slug?: string }
 ): Product {
+  const slug = data.slug ?? slugify(data.name);
   return {
     ...data,
-    slug: data.slug ?? slugify(data.name),
+    slug,
+    bottleImage: data.bottleImage ?? `/assets/bottles/${slug}.svg`,
   };
 }
 
@@ -101,22 +101,6 @@ export const products: Product[] = [
     },
   }),
   product({
-    sku: "AFI-W-004",
-    name: "Finca Río Negro",
-    producer: "Finca Río Negro",
-    region: "Uco Valley",
-    country: "Argentina",
-    category: "wine",
-    varietal: "Malbec",
-    availability: "limited",
-    image: "/assets/portfolio/finca-rio-negro.png",
-    organic: true,
-    description: {
-      en: "High-altitude Uco Valley Malbec — organic, expressive, and rooted in Argentina's most dramatic terroir.",
-      es: "Malbec orgánico de la Uco Valley a gran altitud — expresivo y enraizado en el terroir más dramático de Argentina.",
-    },
-  }),
-  product({
     sku: "AFI-W-005",
     name: "Quinta do Crasto",
     producer: "Quinta do Crasto",
@@ -158,7 +142,7 @@ export const products: Product[] = [
     availability: "exclusive",
     image: "/assets/portfolio/bodegas-chaves.png",
     description: {
-      en: "Ribera del Duero Tempranillo with depth, mineral drive, and the gravitas of Spain's great plateau wines.",
+      en: "",
       es: "Tempranillo de Ribera del Duero con profundidad, mineralidad y la gravedad de los grandes vinos de meseta.",
     },
   }),
@@ -173,7 +157,7 @@ export const products: Product[] = [
     availability: "limited",
     image: "/assets/portfolio/finca-rodma.png",
     description: {
-      en: "Old-vine Garnacha from Rioja — generous fruit, fine tannins, and a sense of place in every glass.",
+      en: "",
       es: "Garnacha de viñedos viejos en Rioja — fruta generosa, taninos finos y sentido de lugar en cada copa.",
     },
   }),
@@ -189,7 +173,7 @@ export const products: Product[] = [
     image: "/assets/portfolio/axr-napa-valley.png",
     producerUrl: "https://www.axrnapa.com",
     description: {
-      en: "A bold Napa red blend from a visionary estate — power, polish, and exclusivity in equal measure.",
+      en: "A bold Napa wine from a visionary estate — power, polish, and exclusivity in equal measure.",
       es: "Un audaz blend tinto de Napa desde una finca visionaria — potencia, elegancia y exclusividad a partes iguales.",
     },
   }),
@@ -200,11 +184,11 @@ export const products: Product[] = [
     region: "Bordeaux",
     country: "France",
     category: "wine",
-    varietal: "Merlot Blend",
+    varietal: "Cabernet",
     availability: "exclusive",
     image: "/assets/portfolio/michel-rolland.png",
     description: {
-      en: "Consulting legend Michel Rolland's signature Merlot blend — opulent, polished, and unmistakably Bordeaux.",
+      en: "Consulting legend Michel Rolland's signature Cabernet — opulent and polished.",
       es: "El Merlot blend emblemático de Michel Rolland — opulento, pulido e inconfundiblemente bordelés.",
     },
   }),
@@ -399,21 +383,6 @@ export const products: Product[] = [
     },
   }),
   product({
-    sku: "AFI-S-003",
-    name: "Jax Spirits",
-    producer: "Jax Spirits",
-    region: "Louisiana",
-    country: "USA",
-    category: "spirits",
-    varietal: "American Whiskey",
-    availability: "limited",
-    image: "/assets/portfolio/jax.png",
-    description: {
-      en: "Louisiana American whiskey with Southern character — bold, approachable, and bar-ready.",
-      es: "Whiskey americano de Louisiana con carácter sureño — audaz, accesible y listo para el bar.",
-    },
-  }),
-  product({
     sku: "AFI-S-004",
     name: "Mossburn Distillers",
     producer: "Mossburn",
@@ -478,21 +447,6 @@ export const products: Product[] = [
     },
   }),
   product({
-    sku: "AFI-S-008",
-    name: "Gin MG",
-    producer: "Gin MG",
-    region: "Málaga",
-    country: "Spain",
-    category: "spirits",
-    varietal: "London Dry Gin",
-    availability: "core",
-    image: "/assets/portfolio/gin-mg.png",
-    description: {
-      en: "Spanish London Dry Gin from Málaga — classic juniper backbone with Mediterranean botanical lift.",
-      es: "London Dry Gin español de Málaga — estructura clásica de enebro con un toque botánico mediterráneo.",
-    },
-  }),
-  product({
     sku: "AFI-S-009",
     name: "Rod & Hammer's SLO Stills",
     slug: "rod-and-hammers-slo-stills",
@@ -522,23 +476,6 @@ export const products: Product[] = [
     description: {
       en: "Award-winning bitters and liqueurs from Munich — essential tools for the serious cocktail program.",
       es: "Bitters y licores premiados de Múnich — herramientas esenciales para un programa de cócteles serio.",
-    },
-  }),
-  product({
-    sku: "AFI-L-002",
-    name: "Mozart Chocolate Liqueur",
-    slug: "mozart-chocolate-liqueur",
-    producer: "Mozart Distillerie",
-    region: "Salzburg",
-    country: "Austria",
-    category: "liqueurs",
-    varietal: "Chocolate Liqueur",
-    availability: "core",
-    image: "/assets/portfolio/mozart.png",
-    producerUrl: "https://www.mozart.at",
-    description: {
-      en: "Salzburg chocolate liqueur — velvety, indulgent, and the finishing touch for dessert cocktails.",
-      es: "Licor de chocolate de Salzburgo — aterciopelado, indulgente y el toque final para cócteles de postre.",
     },
   }),
 ];

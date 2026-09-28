@@ -5,30 +5,18 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { designTokens } from "@/lib/design-tokens";
 import { Contact } from "@/components/Contact";
+import { HomeValues } from "@/components/HomeValues";
+import { Link } from "@/i18n/navigation";
+import { MotionOverlay } from "@/components/MotionOverlay";
+import { PhotoSlideshow } from "@/components/PhotoSlideshow";
+import { Portfolio } from "@/components/Portfolio";
+import { ProductCatalog } from "@/components/ProductCatalog";
 import { SectionReveal } from "@/components/SectionReveal";
 import { StatsBar } from "@/components/StatsBar";
 import { TastingRoom } from "@/components/TastingRoom";
 
-const valueKeys = [
-  "greatness",
-  "collaboration",
-  "accountability",
-  "simplicity",
-  "passion",
-  "devotion",
-  "integrity",
-] as const;
-
-const ribbon = [
-  { src: "/assets/care-package/care-package-01-napa-heights.png", label: "Wine" },
-  { src: "/assets/care-package/care-package-02-old-world-stone.png", label: "Spirits" },
-  { src: "/assets/care-package/v2/ad-03-bar-placement.png", label: "Beer" },
-  { src: "/assets/care-package/care-package-03-craft-in-light.png", label: "Mixers" },
-  { src: "/assets/care-package/v2/ad-02-portfolio-launch.png", label: "NA" },
-] as const;
-
-export function CinemaLanding() {
-  const t = useTranslations("concepts.cinema");
+export function HomeLanding() {
+  const t = useTranslations("home");
   const tAbout = useTranslations("about");
   const reduceMotion = useReducedMotion();
 
@@ -36,11 +24,7 @@ export function CinemaLanding() {
     <div className="bg-[#141112] text-ivory">
       <section className="relative flex min-h-svh flex-col justify-end overflow-hidden px-6 pt-36 pb-14 lg:px-10 lg:pb-20">
         <div className="absolute inset-0">
-          <motion.div
-            className="absolute inset-0"
-            animate={reduceMotion ? undefined : { scale: [1, 1.06] }}
-            transition={{ duration: 18, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-          >
+          {reduceMotion ? (
             <Image
               src="/assets/care-package/v2/ad-04-golden-hour-toast.png"
               alt=""
@@ -48,9 +32,21 @@ export function CinemaLanding() {
               priority
               className="object-cover"
             />
-          </motion.div>
+          ) : (
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster="/assets/care-package/v2/ad-04-golden-hour-toast.png"
+              className="absolute inset-0 h-full w-full object-cover"
+            >
+              <source src="/assets/video/hero-wine-pour.mp4" type="video/mp4" />
+            </video>
+          )}
           <div className="absolute inset-0 bg-gradient-to-b from-charcoal/70 via-charcoal/35 to-[#141112]" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,rgba(197,160,115,0.22),transparent_50%)]" />
+          <MotionOverlay variant="hero" />
         </div>
 
         <div className="relative mx-auto w-full max-w-7xl">
@@ -90,18 +86,24 @@ export function CinemaLanding() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35, ease: designTokens.motion.ease }}
           >
-            <a
-              href="#contact"
+            <Link
+              href="/catalog"
               className="border border-bronze bg-bronze px-6 py-3 text-[0.72rem] tracking-[0.18em] text-charcoal uppercase transition hover:border-bronze-light hover:bg-bronze-light"
             >
+              {t("ctaCatalog")}
+            </Link>
+            <Link
+              href="/contact"
+              className="border border-white/35 px-6 py-3 text-[0.72rem] tracking-[0.18em] text-white uppercase transition hover:border-bronze-light hover:text-bronze-light"
+            >
               {t("ctaTrade")}
-            </a>
-            <a
-              href="#tasting"
+            </Link>
+            <Link
+              href="/tasting"
               className="border border-white/35 px-6 py-3 text-[0.72rem] tracking-[0.18em] text-white uppercase transition hover:border-bronze-light hover:text-bronze-light"
             >
               {t("ctaRoom")}
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -119,6 +121,12 @@ export function CinemaLanding() {
             <p>{tAbout("paragraph1")}</p>
             <p>{tAbout("paragraph2")}</p>
           </div>
+          <Link
+            href="/about"
+            className="mt-10 inline-block text-[0.72rem] tracking-[0.18em] text-bronze-light uppercase transition hover:text-white"
+          >
+            {t("readStory")} →
+          </Link>
         </SectionReveal>
       </section>
 
@@ -139,49 +147,13 @@ export function CinemaLanding() {
         </div>
       </section>
 
-      <section className="overflow-hidden py-20">
-        <div className="mx-auto mb-10 max-w-4xl px-6 lg:px-10">
-          <SectionReveal>
-            <p className="section-eyebrow mb-4 text-bronze">{t("portfolioLabel")}</p>
-            <h2 className="font-display text-4xl font-normal lg:text-5xl">{t("portfolioTitle")}</h2>
-          </SectionReveal>
-        </div>
-        <div className="flex w-max gap-4 pl-6 [animation:marquee_40s_linear_infinite] hover:[animation-play-state:paused]">
-          {[...ribbon, ...ribbon].map((item, i) => (
-            <div
-              key={`${item.src}-${i}`}
-              className="relative aspect-[3/4] w-[min(72vw,280px)] shrink-0 overflow-hidden bg-charcoal"
-            >
-              <Image src={item.src} alt="" fill className="object-cover opacity-85 transition hover:opacity-100" />
-              <span className="absolute bottom-4 left-4 text-[0.68rem] tracking-[0.2em] text-white uppercase">
-                {item.label}
-              </span>
-            </div>
-          ))}
-        </div>
-      </section>
+      <ProductCatalog />
 
-      <section className="border-t border-bronze/20 px-6 py-24 lg:px-10">
-        <div className="mx-auto max-w-4xl">
-          <SectionReveal>
-            <p className="section-eyebrow mb-4 text-bronze">{t("valuesLabel")}</p>
-            <h2 className="font-display mb-10 text-4xl font-normal lg:text-5xl">{t("valuesTitle")}</h2>
-            <ul className="divide-y divide-white/10">
-              {valueKeys.map((key) => (
-                <li
-                  key={key}
-                  className="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:items-baseline sm:gap-8"
-                >
-                  <strong className="font-display text-xl font-medium text-bronze-light">
-                    {t(`values.${key}`)}
-                  </strong>
-                  <span className="font-light text-white/60">{t(`values.${key}Body`)}</span>
-                </li>
-              ))}
-            </ul>
-          </SectionReveal>
-        </div>
-      </section>
+      <PhotoSlideshow />
+
+      <Portfolio />
+
+      <HomeValues />
 
       <TastingRoom />
 
@@ -190,18 +162,18 @@ export function CinemaLanding() {
           <h2 className="font-display mb-4 text-4xl font-normal lg:text-5xl">{t("finaleTitle")}</h2>
           <p className="mx-auto mb-10 max-w-lg font-light text-white/60">{t("finaleBody")}</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="border border-bronze bg-bronze px-6 py-3 text-[0.72rem] tracking-[0.18em] text-charcoal uppercase transition hover:bg-bronze-light"
             >
               {t("ctaTrade")}
-            </a>
-            <a
-              href="#tasting"
+            </Link>
+            <Link
+              href="/tasting"
               className="border border-white/35 px-6 py-3 text-[0.72rem] tracking-[0.18em] text-white uppercase transition hover:border-bronze-light hover:text-bronze-light"
             >
               {t("ctaRoom")}
-            </a>
+            </Link>
           </div>
         </SectionReveal>
       </section>
