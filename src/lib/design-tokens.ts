@@ -25,8 +25,65 @@ export type PortfolioCategory =
   | "wine"
   | "spirits"
   | "beer"
-  | "liqueurs"
   | "glassware"
   | "grocery"
   | "nonfood"
   | "mixers";
+
+export type WineStyle = "sparkling" | "white" | "rose" | "red" | "fortified" | "sake";
+
+export type WineOrigin =
+  | "california"
+  | "washington"
+  | "oregon"
+  | "spain"
+  | "portugal"
+  | "italy"
+  | "france"
+  | "newZealand"
+  | "argentina"
+  | "other";
+
+export type SpiritType = "vodka" | "gin" | "tequila" | "whisky" | "liqueurs" | "other";
+
+export const mainCategories = [
+  "all",
+  "wine",
+  "spirits",
+  "beer",
+  "glassware",
+  "grocery",
+  "nonfood",
+  "mixers",
+] as const satisfies readonly PortfolioCategory[];
+
+export const wineStyles = [
+  "sparkling",
+  "white",
+  "rose",
+  "red",
+  "fortified",
+  "sake",
+] as const satisfies readonly WineStyle[];
+
+export const wineOrigins = [
+  "california",
+  "washington",
+  "oregon",
+  "spain",
+  "portugal",
+  "italy",
+  "france",
+  "newZealand",
+  "argentina",
+  "other",
+] as const satisfies readonly WineOrigin[];
+
+export const spiritTypes = [
+  "vodka",
+  "gin",
+  "tequila",
+  "whisky",
+  "liqueurs",
+  "other",
+] as const satisfies readonly SpiritType[];

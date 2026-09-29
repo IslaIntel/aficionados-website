@@ -2,31 +2,46 @@
 
 import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
-import type { PortfolioCategory } from "@/lib/design-tokens";
+import {
+  mainCategories,
+  spiritTypes,
+  wineOrigins,
+  wineStyles,
+  type PortfolioCategory,
+  type SpiritType,
+  type WineOrigin,
+  type WineStyle,
+} from "@/lib/design-tokens";
 import { portfolioBrands } from "@/lib/portfolio";
 import { BrandLogoPlate } from "./BrandLogoPlate";
+import { SegmentRow } from "./SegmentRow";
 import { MotionOverlay } from "./MotionOverlay";
 import { SectionReveal } from "./SectionReveal";
 
-const filters: PortfolioCategory[] = [
-  "all",
-  "wine",
-  "spirits",
-  "beer",
-  "mixers",
-  "nonfood",
-  "glassware",
-  "grocery",
-];
-
 export function Portfolio() {
   const t = useTranslations("portfolio");
+  const segments = useTranslations("catalog");
   const [active, setActive] = useState<PortfolioCategory>("all");
+  const [wineStyle, setWineStyle] = useState<"all" | WineStyle>("all");
+  const [wineOrigin, setWineOrigin] = useState<"all" | WineOrigin>("all");
+  const [spiritType, setSpiritType] = useState<"all" | SpiritType>("all");
+
+  const selectCategory = (category: PortfolioCategory) => {
+    setActive(category);
+    setWineStyle("all");
+    setWineOrigin("all");
+    setSpiritType("all");
+  };
 
   const filtered = useMemo(() => {
-    if (active === "all") return portfolioBrands;
-    return portfolioBrands.filter((brand) => brand.category === active);
-  }, [active]);
+    return portfolioBrands.filter((brand) => {
+      if (active !== "all" && brand.category !== active) return false;
+      if (active === "wine" && wineStyle !== "all" && brand.wineStyle !== wineStyle) return false;
+      if (active === "wine" && wineOrigin !== "all" && brand.wineOrigin !== wineOrigin) return false;
+      if (active === "spirits" && spiritType !== "all" && brand.spiritType !== spiritType) return false;
+      return true;
+    });
+  }, [active, wineStyle, wineOrigin, spiritType]);
 
   return (
     <section id="portfolio" className="relative overflow-hidden bg-cream px-6 py-24 lg:px-10 lg:py-32">
@@ -42,13 +57,13 @@ export function Portfolio() {
           <p className="mb-10 max-w-2xl text-base leading-8 text-muted">{t("description")}</p>
         </SectionReveal>
 
-        <SectionReveal delay={0.08}>
-          <div className="mb-12 flex flex-wrap gap-3">
-            {filters.map((filter) => (
+        <SectionReveal delay={0.08} className="mb-12">
+          <div className="flex flex-wrap gap-3">
+            {mainCategories.map((filter) => (
               <button
                 key={filter}
                 type="button"
-                onClick={() => setActive(filter)}
+                onClick={() => selectCategory(filter)}
                 className={`border px-5 py-2 text-[0.68rem] tracking-[0.22em] uppercase transition ${
                   active === filter
                     ? "border-charcoal bg-charcoal text-bronze-light"
@@ -59,6 +74,41 @@ export function Portfolio() {
               </button>
             ))}
           </div>
+          {active === "wine" ? (
+            <div className="mt-6 space-y-4">
+              <SegmentRow
+                label={segments("segments.style")}
+                allLabel={t("filters.all")}
+                value={wineStyle}
+                options={wineStyles}
+                labelFor={(key) => segments(`wineStyle.${key}`)}
+                onChange={setWineStyle}
+                tone="light"
+              />
+              <SegmentRow
+                label={segments("segments.origin")}
+                allLabel={t("filters.all")}
+                value={wineOrigin}
+                options={wineOrigins}
+                labelFor={(key) => segments(`wineOrigin.${key}`)}
+                onChange={setWineOrigin}
+                tone="light"
+              />
+            </div>
+          ) : null}
+          {active === "spirits" ? (
+            <div className="mt-6">
+              <SegmentRow
+                label={segments("segments.type")}
+                allLabel={t("filters.all")}
+                value={spiritType}
+                options={spiritTypes}
+                labelFor={(key) => segments(`spiritType.${key}`)}
+                onChange={setSpiritType}
+                tone="light"
+              />
+            </div>
+          ) : null}
         </SectionReveal>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

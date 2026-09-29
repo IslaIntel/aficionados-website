@@ -92,6 +92,39 @@
       "nonfood": "Non-food",
       "mixers": "Non-alcoholic beverages and mixers"
     },
+    "segments": {
+      "style": "Style",
+      "origin": "Origin",
+      "type": "Type"
+    },
+    "wineStyle": {
+      "sparkling": "Sparkling",
+      "white": "White",
+      "rose": "Rosé",
+      "red": "Red",
+      "fortified": "Fortified",
+      "sake": "Sake"
+    },
+    "wineOrigin": {
+      "california": "California",
+      "washington": "Washington",
+      "oregon": "Oregon",
+      "spain": "Spain",
+      "portugal": "Portugal",
+      "italy": "Italy",
+      "france": "France",
+      "newZealand": "New Zealand",
+      "argentina": "Argentina",
+      "other": "Other"
+    },
+    "spiritType": {
+      "vodka": "Vodka",
+      "gin": "Gin",
+      "tequila": "Tequila",
+      "whisky": "Whisky",
+      "liqueurs": "Liqueurs",
+      "other": "Other"
+    },
     "table": {
       "sku": "SKU",
       "product": "Product",
@@ -146,7 +179,7 @@
     "detailsEyebrow": "Visit",
     "detailsTitle": "Hours, events, and tastings",
     "locationLabel": "Find us",
-    "addressDetail": "#39 Frances St., Amelia Industrial Park, Guaynabo, Puerto Rico 00934",
+    "addressDetail": "#39 Frances St., Amelia Industrial Park, Guaynabo, Puerto Rico 00968",
     "hoursLabel": "Hours of operation",
     "hoursDetail": "Monday to Friday, 9:00 AM to 6:00 PM",
     "eventsLabel": "Private events",

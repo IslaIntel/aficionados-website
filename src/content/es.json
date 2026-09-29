@@ -92,6 +92,39 @@
       "nonfood": "No alimentario",
       "mixers": "Bebidas sin alcohol y mixers"
     },
+    "segments": {
+      "style": "Estilo",
+      "origin": "Origen",
+      "type": "Tipo"
+    },
+    "wineStyle": {
+      "sparkling": "Espumoso",
+      "white": "Blanco",
+      "rose": "Rosado",
+      "red": "Tinto",
+      "fortified": "Generoso",
+      "sake": "Sake"
+    },
+    "wineOrigin": {
+      "california": "California",
+      "washington": "Washington",
+      "oregon": "Oregón",
+      "spain": "España",
+      "portugal": "Portugal",
+      "italy": "Italia",
+      "france": "Francia",
+      "newZealand": "Nueva Zelanda",
+      "argentina": "Argentina",
+      "other": "Otros"
+    },
+    "spiritType": {
+      "vodka": "Vodka",
+      "gin": "Gin",
+      "tequila": "Tequila",
+      "whisky": "Whisky",
+      "liqueurs": "Licores",
+      "other": "Otros"
+    },
     "table": {
       "sku": "SKU",
       "product": "Producto",
@@ -146,7 +179,7 @@
     "detailsEyebrow": "Visítanos",
     "detailsTitle": "Horario, eventos y degustaciones comerciales",
     "locationLabel": "Encuéntrenos",
-    "addressDetail": "#39 Frances St., Amelia Industrial Park, Guaynabo, Puerto Rico 00934",
+    "addressDetail": "#39 Frances St., Amelia Industrial Park, Guaynabo, Puerto Rico 00968",
     "hoursLabel": "Horario de atención",
     "hoursDetail": "Lunes a viernes, 9:00 AM a 6:00 PM",
     "eventsLabel": "Eventos privados",
@@ -173,7 +206,7 @@
     "findUs": "Encuéntrenos",
     "hours": "Horario de atención",
     "hoursValue": "Lunes a Viernes: 9:00 AM - 6:00 PM",
-    "address": "39 Calle Frances, Guaynabo, 00934, Puerto Rico",
+    "address": "39 Calle Frances, Amelia Industrial Park, Guaynabo, 00968, Puerto Rico",
     "phone": "787-273-0403",
     "emailInfo": "info@aficionadosinc.com",
     "emailSales": "sales@aficionadosinc.com"

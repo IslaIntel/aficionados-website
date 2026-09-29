@@ -60,6 +60,15 @@ export function ProductDetailView({ product }: { product: Product }) {
                   [t("detail.region"), `${product.region}, ${product.country}`],
                   [t("detail.varietal"), product.varietal],
                   [t("detail.category"), t(`filters.${product.category}`)],
+                  ...(product.wineStyle
+                    ? [[t("segments.style"), t(`wineStyle.${product.wineStyle}`)] as const]
+                    : []),
+                  ...(product.wineOrigin
+                    ? [[t("segments.origin"), t(`wineOrigin.${product.wineOrigin}`)] as const]
+                    : []),
+                  ...(product.spiritType
+                    ? [[t("segments.type"), t(`spiritType.${product.spiritType}`)] as const]
+                    : []),
                   [t("detail.availability"), t(`availability.${product.availability}`)],
                 ].map(([label, value]) => (
                   <div key={label} className="border border-white/10 bg-white/[0.03] px-4 py-3">

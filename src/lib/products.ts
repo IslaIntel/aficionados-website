@@ -1,3 +1,5 @@
+import type { PortfolioCategory, SpiritType, WineOrigin, WineStyle } from "./design-tokens";
+
 export type ProductAvailability = "exclusive" | "limited" | "core";
 
 export type LocalizedText = {
@@ -12,8 +14,11 @@ export type Product = {
   producer: string;
   region: string;
   country: string;
-  category: "wine" | "spirits" | "liqueurs";
+  category: Exclude<PortfolioCategory, "all">;
   varietal: string;
+  wineStyle?: WineStyle;
+  wineOrigin?: WineOrigin;
+  spiritType?: SpiritType;
   availability: ProductAvailability;
   /** Brand logo used in portfolio and label strip */
   image: string;
@@ -28,8 +33,54 @@ export type Product = {
 const categoryPlaceholders: Record<Product["category"], string> = {
   wine: "/assets/bottles/placeholder-wine.svg",
   spirits: "/assets/bottles/placeholder-spirits.png",
-  liqueurs: "/assets/bottles/placeholder-liqueur.svg",
+  beer: "/assets/bottles/placeholder-wine.svg",
+  glassware: "/assets/bottles/placeholder-spirits.png",
+  grocery: "/assets/bottles/placeholder-wine.svg",
+  nonfood: "/assets/bottles/placeholder-spirits.png",
+  mixers: "/assets/bottles/placeholder-liqueur.svg",
 };
+
+function inferWineStyle(data: { region: string; varietal: string }): WineStyle {
+  const region = data.region.toLowerCase();
+  const varietal = data.varietal.toLowerCase();
+  if (/champagne|cava|prosecco|sparkling/.test(region) || /sparkling|champagne/.test(varietal)) {
+    return "sparkling";
+  }
+  if (/ros[eé]|rosado/.test(varietal)) return "rose";
+  if (/port|sherry|madeira|fortified/.test(varietal)) return "fortified";
+  if (/sake/.test(varietal)) return "sake";
+  if (/chardonnay|godello|sauvignon|riesling|albariño|albarino|verdejo|pinot grigio|pinot gris|viognier|chenin/.test(varietal)) {
+    return "white";
+  }
+  return "red";
+}
+
+function inferWineOrigin(data: { region: string; country: string }): WineOrigin {
+  const country = data.country.toLowerCase();
+  const region = data.region.toLowerCase();
+  if (country === "spain") return "spain";
+  if (country === "portugal") return "portugal";
+  if (country === "italy") return "italy";
+  if (country === "france") return "france";
+  if (country === "argentina") return "argentina";
+  if (country === "new zealand") return "newZealand";
+  if (country === "usa" || country === "united states") {
+    if (region.includes("washington")) return "washington";
+    if (region.includes("oregon")) return "oregon";
+    if (/napa|carneros|paso|lodi|sonoma|california/.test(region)) return "california";
+  }
+  return "other";
+}
+
+function inferSpiritType(data: { name: string; varietal: string }): SpiritType {
+  const text = `${data.name} ${data.varietal}`.toLowerCase();
+  if (text.includes("vodka")) return "vodka";
+  if (text.includes("gin")) return "gin";
+  if (/tequila|mezcal/.test(text)) return "tequila";
+  if (/whisk|scotch|bourbon/.test(text)) return "whisky";
+  if (/liqueur|bitter/.test(text)) return "liqueurs";
+  return "other";
+}
 
 function slugify(value: string) {
   return value
@@ -48,6 +99,9 @@ function product(
     ...data,
     slug,
     bottleImage: data.bottleImage ?? `/assets/bottles/${slug}.svg`,
+    wineStyle: data.category === "wine" ? (data.wineStyle ?? inferWineStyle(data)) : undefined,
+    wineOrigin: data.category === "wine" ? (data.wineOrigin ?? inferWineOrigin(data)) : undefined,
+    spiritType: data.category === "spirits" ? (data.spiritType ?? inferSpiritType(data)) : undefined,
   };
 }
 
@@ -356,7 +410,7 @@ export const products: Product[] = [
     producer: "Jack Rudy Cocktail Co.",
     region: "Charleston",
     country: "USA",
-    category: "spirits",
+    category: "mixers",
     varietal: "Cocktail Mixers",
     availability: "core",
     image: "/assets/portfolio/jack-rudy.png",
@@ -372,7 +426,7 @@ export const products: Product[] = [
     producer: "Boylan Bottling Co.",
     region: "New Jersey",
     country: "USA",
-    category: "spirits",
+    category: "mixers",
     varietal: "Craft Sodas & Tonics",
     availability: "core",
     image: "/assets/portfolio/boylan-bottling.png",
@@ -468,7 +522,7 @@ export const products: Product[] = [
     producer: "The Bitter Truth",
     region: "Munich",
     country: "Germany",
-    category: "liqueurs",
+    category: "spirits",
     varietal: "Bitters & Liqueurs",
     availability: "core",
     image: "/assets/portfolio/the-bitter-truth.png",
@@ -497,7 +551,7 @@ export function getProductStats() {
     total: products.length,
     wine: products.filter((p) => p.category === "wine").length,
     spirits: products.filter((p) => p.category === "spirits").length,
-    liqueurs: products.filter((p) => p.category === "liqueurs").length,
+    mixers: products.filter((p) => p.category === "mixers").length,
     exclusive: products.filter((p) => p.availability === "exclusive").length,
   };
 }

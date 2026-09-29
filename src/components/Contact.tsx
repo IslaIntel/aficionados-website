@@ -137,7 +137,7 @@ export function Contact() {
           <div className="mt-8 overflow-hidden border border-white/10">
             <iframe
               title="Aficionados location"
-              src="https://maps.google.com/maps?q=39+Calle+Frances,+Guaynabo,+00934,+Puerto+Rico&output=embed"
+              src="https://maps.google.com/maps?q=39+Calle+Frances,+Amelia+Industrial+Park,+Guaynabo,+00968,+Puerto+Rico&output=embed"
               className="h-72 w-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

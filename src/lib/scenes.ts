@@ -68,7 +68,7 @@ export function getProductSceneImage(product: Product): string {
   const pool =
     product.category === "spirits"
       ? spiritsScenes
-      : product.category === "liqueurs"
+      : product.category === "mixers"
         ? liqueurScenes
         : wineScenes;
 

@@ -4,27 +4,26 @@ import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 import { Link } from "@/i18n/navigation";
-import type { PortfolioCategory } from "@/lib/design-tokens";
+import {
+  mainCategories,
+  spiritTypes,
+  wineOrigins,
+  wineStyles,
+  type PortfolioCategory,
+  type SpiritType,
+  type WineOrigin,
+  type WineStyle,
+} from "@/lib/design-tokens";
 import { getProductDescription, getProductStats, products, type Product } from "@/lib/products";
 import { getProductSceneImage } from "@/lib/scenes";
 import { AvailabilityBadge } from "@/components/ProductAvailabilityBadge";
 import { BottleHeroPlate } from "@/components/BottleHeroPlate";
 import { MotionOverlay } from "@/components/MotionOverlay";
 import { SectionReveal } from "@/components/SectionReveal";
+import { SegmentRow } from "@/components/SegmentRow";
 
 type ViewMode = "listicle" | "grid" | "table";
 type SortKey = "name" | "region";
-
-const categories: PortfolioCategory[] = [
-  "all",
-  "wine",
-  "spirits",
-  "beer",
-  "glassware",
-  "grocery",
-  "nonfood",
-  "mixers",
-];
 
 export function ProductCatalog() {
   const t = useTranslations("catalog");
@@ -32,8 +31,18 @@ export function ProductCatalog() {
 
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<PortfolioCategory>("all");
+  const [wineStyle, setWineStyle] = useState<"all" | WineStyle>("all");
+  const [wineOrigin, setWineOrigin] = useState<"all" | WineOrigin>("all");
+  const [spiritType, setSpiritType] = useState<"all" | SpiritType>("all");
   const [sort, setSort] = useState<SortKey>("name");
   const [view, setView] = useState<ViewMode>("listicle");
+
+  const selectCategory = (next: PortfolioCategory) => {
+    setCategory(next);
+    setWineStyle("all");
+    setWineOrigin("all");
+    setSpiritType("all");
+  };
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -41,6 +50,15 @@ export function ProductCatalog() {
 
     if (category !== "all") {
       list = list.filter((p) => p.category === category);
+    }
+    if (category === "wine" && wineStyle !== "all") {
+      list = list.filter((p) => p.wineStyle === wineStyle);
+    }
+    if (category === "wine" && wineOrigin !== "all") {
+      list = list.filter((p) => p.wineOrigin === wineOrigin);
+    }
+    if (category === "spirits" && spiritType !== "all") {
+      list = list.filter((p) => p.spiritType === spiritType);
     }
 
     if (q) {
@@ -55,7 +73,7 @@ export function ProductCatalog() {
     }
 
     return [...list].sort((a, b) => a[sort].localeCompare(b[sort]));
-  }, [query, category, sort]);
+  }, [query, category, wineStyle, wineOrigin, spiritType, sort]);
 
   const featured = view === "listicle" ? filtered[0] : undefined;
   const rest = view === "listicle" ? filtered.slice(1) : filtered;
@@ -128,11 +146,11 @@ export function ProductCatalog() {
           </div>
 
           <div className="mb-8 flex flex-wrap gap-2">
-            {categories.map((cat) => (
+            {mainCategories.map((cat) => (
               <button
                 key={cat}
                 type="button"
-                onClick={() => setCategory(cat)}
+                onClick={() => selectCategory(cat)}
                 className={`border px-4 py-2 text-[0.65rem] tracking-[0.2em] uppercase transition ${
                   category === cat
                     ? "border-bronze-light bg-bronze/20 text-bronze-light"
@@ -143,6 +161,41 @@ export function ProductCatalog() {
               </button>
             ))}
           </div>
+          {category === "wine" ? (
+            <div className="mt-5 space-y-4">
+              <SegmentRow
+                label={t("segments.style")}
+                allLabel={t("filters.all")}
+                value={wineStyle}
+                options={wineStyles}
+                labelFor={(key) => t(`wineStyle.${key}`)}
+                onChange={setWineStyle}
+                tone="dark"
+              />
+              <SegmentRow
+                label={t("segments.origin")}
+                allLabel={t("filters.all")}
+                value={wineOrigin}
+                options={wineOrigins}
+                labelFor={(key) => t(`wineOrigin.${key}`)}
+                onChange={setWineOrigin}
+                tone="dark"
+              />
+            </div>
+          ) : null}
+          {category === "spirits" ? (
+            <div className="mt-5">
+              <SegmentRow
+                label={t("segments.type")}
+                allLabel={t("filters.all")}
+                value={spiritType}
+                options={spiritTypes}
+                labelFor={(key) => t(`spiritType.${key}`)}
+                onChange={setSpiritType}
+                tone="dark"
+              />
+            </div>
+          ) : null}
         </SectionReveal>
 
         <p className="mb-6 text-xs tracking-[0.16em] text-white/40 uppercase">
